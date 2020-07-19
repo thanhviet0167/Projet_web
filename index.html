@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shoping online</title>
 
     <!--Link css and script-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
@@ -16,32 +16,56 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <body>
-    <!--Header-->
-    <header class="fixed-bottom">
-        <div class="container ">
-            <div class="row ">
-                <div class="col-md-4 col-sm-12 col-12">
-                   <div class="btn-group">
-                       <button class="btn border dropdown-toggle my-md-4 my-2 text-white"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sexe</button>
-                       <div class="dropdown-menu">
-                           <a href="#" class="dropdown-item">Masculin</a>
-                           <a href="#" class="dropdown-item">Femminan</a>
-                       </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-12 text-center">
-                    <h2 class="my-md-3 site-title text-white">Animiz</h2>
-                </div>
-                <div class="col-md-4 col-12 text-right">
-                    <p class="my-md-4 header-links">
-                        <a href="#" class="px-2">Se connecter</a>
-                        <a href="#" class="px-1">Créer un compte</a>
-                    </p>
-                </div>
-            </div>
+    <div class="container ">
+        <div class id = "header">
+            <!--Header-->
         </div>
-    </header>
+    </div>
+    <div id="content">
+    <!--NavBar Section-->
+        <nav class="navbar navbar-expand-lg bg-primary-color text-white">
+            <a class="navbar-brand" text-white>Animiz</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Category</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Gender
+                    </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Male</a>
+                    <a class="dropdown-item" href="#">Female</a>
+                </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                </ul>
+                
+                <div class="collapse navbar-collapse " id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Sign-Up <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+            
+        </nav>
+    </div>
+</div>
+    
     <!--End of header-->
     <!--Link script-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

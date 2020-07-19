@@ -5,23 +5,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sofia&display=swap');
 
 :root{
-    --primary-color: #45ccb8;
+    --primary-color: #ff2faf;
     --light-gray: #2b3032a1;
     --border: #2b303218;
-    --text-color: #ff686b;
+    --text-color: #ffffff;
     --roboto: "Roboto", sans-serif;
     --gugi:"Gugi",cursive;
     --sofia:"Sofia",cursive;
     --pro-color: #d1b3ff;
     --pro-title: #3d0099;
 }
-
+.navbar-nav
+{
+    height: 40px !important;
+}
+.navbar-text
+{
+    line-height: 30px !important;
+}
+.nav-link
+{
+    color: white;
+}
 .primary-color{
     color:var(--primary-color);
 }
 .bg-primary-color{
     background-color: var(--primary-color)!important;
-    
 }
 .text-color{
     color: var(--text-color);
@@ -48,6 +58,14 @@ header .site-title{
     font-size: 0.7em;
 }
 
+.navbar-brand
+{
+    color: #7a0d4d ;
+}
+img
+{
+    position: absolute;
+}
 .header-links a{
     font-size: 0.9em;
     text-decoration: none;
