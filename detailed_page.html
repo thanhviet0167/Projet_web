@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="fixed-top">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 col-sm-12 col-12 gender-box">
@@ -87,7 +87,8 @@
                     <i class="fa fa-search p-2"></i>
                 </li>
                 <li class="btn">
-                    <i class="fa fa-shopping-basket p-2"></i>
+                    <i class="fa fa-shopping-basket p-2"></i> 
+                    Cart: <span id="cartNumbers">0</span>
                 </li>
             </div>
           </nav>
@@ -164,7 +165,7 @@
                     <input type="number" class="product-number" value="1">
                     <p>
                     <button type="button" class="btn btn-default homepage"><i class="fas fa-cart-plus"></i>  Other products</button>
-                    <button type="button" class="btn btn-default cart"><i class="fas fa-cart-plus"></i>  Add to the cart</button>
+                    <button type="button" class="btn btn-default cart add-cart"><i class="fas fa-cart-plus"></i>  Add to the cart</button>
                     <script src="js/script.js"></script>
                     </p>
                 </div>
@@ -181,7 +182,7 @@
                             <i class="fa fa-eye"></i></button>
                         <button type="button" class="btn btn-secondary" title="Add To Your Favorite List">
                             <i class="fa fa-heart"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add To Your Cart">
+                        <button type="button" class="btn btn-secondary add-cart" title="Add To Your Cart">
                             <i class="fa fa-shopping-cart"></i></button>
                     </div>
                 </div>
@@ -204,7 +205,7 @@
                             <i class="fa fa-eye"></i></button>
                         <button type="button" class="btn btn-secondary" title="Add To Your Favorite List">
                             <i class="fa fa-heart"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add To Your Cart">
+                        <button type="button" class="btn btn-secondary add-cart" title="Add To Your Cart">
                             <i class="fa fa-shopping-cart"></i></button>
                     </div>
                 </div>
@@ -227,7 +228,7 @@
                             <i class="fa fa-eye"></i></button>
                         <button type="button" class="btn btn-secondary" title="Add To Your Favorite List">
                             <i class="fa fa-heart"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add To Your Cart">
+                        <button type="button" class="btn btn-secondary add-cart" title="Add To Your Cart">
                             <i class="fa fa-shopping-cart"></i></button>
                     </div>
                 </div>
@@ -250,7 +251,7 @@
                             <i class="fa fa-eye"></i></button>
                         <button type="button" class="btn btn-secondary" title="Add To Your Favorite List">
                             <i class="fa fa-heart"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add To Your Cart">
+                        <button type="button" class="btn btn-secondary add-cart" title="Add To Your Cart">
                             <i class="fa fa-shopping-cart"></i></button>
                     </div>
                 </div>
@@ -334,12 +335,12 @@
             &copy; Designed by Nguyen Sang, Thanh Viet
         </div>
     </div>
-    <script>magnify("myimage", 3);</script>
     <script src="/js/script.js"></script>
+    <script src="/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="/js/main.js"></script>
+   
 </body>
 </html>
