@@ -49,6 +49,21 @@ header .site-title{
     font-size: 0.7em;
 }
 
+.container .dropdown-toggle:hover{
+    opacity: 1.5;
+    background-color: #99ddff;
+}
+
+.container .dropdown-item:hover{
+    opacity: 1.5;
+    background-color: #99ddff;
+}
+
+.container .dropdown-toggle:active, .container .dropdown-toggle:focus{
+    background-color: #33bbff;
+}
+
+
 .header-links a{
     font-size: 0.9em;
     text-decoration: none;
@@ -411,6 +426,49 @@ header .site-title{
     box-shadow: none !important ;
 }
 
+/* About Section */
+
+#about-sec{
+    margin-top: 25px;
+}
+
+.watch-img{
+    color: black;
+}
+
+.watch-img{
+    animation-name: imgLeft;
+    animation-duration: 3s;
+}
+
+.about-text{
+    animation-name: textRight;
+    animation-duration: 3s;
+}
+
+@keyframes imgLeft{
+    0%{
+        transform: translateX(-120px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes textRight{
+    0%{
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
 
 /*Footer*/
 .footer {
@@ -512,4 +570,5 @@ button:hover
 }
 
 *{box-sizing: border-box;}
+
 
