@@ -20,3 +20,8 @@ $(".slider-two").not("slick-intialized") .slick({
     slidesToScroll: 1,
     autoplaySpeed: 3000
 });
+
+
+function Send_mess(){
+    alert("Send message succes");
+}
