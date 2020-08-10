@@ -210,7 +210,7 @@ header .site-title{
 }
 
 .slider-two .slick-track .product:hover span{
-    background-color: var(--primary-color);
+    background-color: #ffff80;
     transform: scale(1.2);
 }
 
@@ -312,3 +312,202 @@ header .site-title{
     box-shadow: 1px 0px 1px 4px rgba(247, 243, 243, 0.9);
     transform: scale(1.1);
 }
+
+
+/*  product-section */
+
+
+.product-section{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    width: 86%;
+    margin: 15px 12.7%;
+    margin-top: 50px;
+    background-color: #ddccff;
+    
+}
+
+.product-section h2{
+    background: #0062cc;
+    color: #fff;
+    width: 272.7px;
+    font-size: 24px;
+    padding: 5px;
+    height: 40px;
+    margin-left: 15px;
+    font-family: var(--gugi);
+}
+
+.product-section h2::after{
+    content: '';
+    border-top: 40px solid #0062cc;
+    border-right: 40px solid transparent;
+    position: relative;
+    left: 30px;
+    top: 33px;
+    
+}
+
+.product-section .row{
+    margin-top: 30px;
+}
+
+.product-section img{
+    width: 100%;
+}
+
+.product-section .item-2:hover,.product-section .item-2:focus,.product-section .item-2:active{
+    transform: scale(1.015);
+}
+
+.product-section .product-bottom .fa{
+    color: yellow;
+    font-size: 10px;
+}
+
+.product-section .product-bottom h3{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.product-section .product-bottom h5{
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.product-section .overlay{
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 10%;
+    margin-left: 0;
+    width: 70px;
+}
+
+.product-section .product-top:hover .overlay{
+    opacity: 1;
+    margin-left: 5%;
+    transition: 0.5s;
+}
+
+.product-section .overlay .fa{
+    cursor: pointer;
+    background-color: #555;
+    color: #000;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    padding: 7px;
+    margin: 5%;
+    margin-bottom: 5%;
+}
+
+.product-section .overlay .btn-secondary{
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important ;
+}
+
+
+/*Footer*/
+.footer {
+    margin-top: 50px;
+    background: #0085b1;
+    color: #e2e2e2;
+    height: 420px;
+    font-family: 'Bitter', serif;
+}
+
+.footer .footer-bottom
+{
+    background:#006c91;
+    color: #e2e2e2;
+    height: 50px;
+    text-align: center;
+
+    bottom: 0px;
+    left: 0px;
+    padding-top: 15px;
+    width: 100%;
+}
+.footer .footer-content
+{
+    border: 2px solid #d9d9d9;
+    height: 370px;
+    display: flex;
+}
+
+.footer .footer-content .footer-section
+{
+    flex: 1;
+    padding: 25px;
+    border: 1px solid white;
+}
+.footer .footer-content .about .contact span
+{
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+.footer .footer-content .about .socials a
+{
+    border: 1px solid white;
+    width: 45px;
+    height: 45px;
+    padding-top: 5px;
+    margin-right: 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.3em;
+    border-radius: 100px;
+    color:white;
+}
+.footer .footer-content .about .socials a:hover{
+    border: 1px solid white;
+    color: white;
+}
+.footer input
+{
+    min-width: 200px;
+    width: 350px;
+    border: 1px solid white;
+    border-radius: 3px;
+    text-align: center;
+    height: 30px;
+}
+.footer textarea
+{
+    min-width: 200px;
+    width: 350px;
+    border: 1px solid white;
+    border-radius: 3px;
+    text-align: center;
+    height: 30px
+}
+
+button:hover
+{
+    background: white;
+}
+.description-feedback
+{
+    font-size: 14px;
+}
+
+.products a
+{
+    color:white;
+    
+} 
+.products a:hover
+{
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+    transition: all 0.5s;
+
+}
+
+*{box-sizing: border-box;}
+
