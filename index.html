@@ -15,71 +15,87 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
     <!--Header-->
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-12 col-12">
-                   <div class="btn-group">
-                       <button class="btn border dropdown-toggle my-md-4 my-2 text-white"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sexe</button>
-                       <div class="dropdown-menu">
-                           <a href="#" class="dropdown-item">Masculin</a>
-                           <a href="#" class="dropdown-item">Femminan</a>
-                       </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-12 text-center">
-                    <h2 class="my-md-3 site-title text-white">Animiz</h2>
-                </div>
-                <div class="col-md-4 col-12 text-right">
-                    <p class="my-md-4 header-links">
-                        <a href="./html/login.html" class="px-2">Se connecter</a>
-                        <a href="./html/sign-up.html" class="px-1">Créer un compte</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid p-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Colection</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About us</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="navbar-nav">
-                    <input class="search-button form-control" type="text" placeholder="Search.." name="search" />
-                    <li class="nav-item border rounded-circle mx-2 search-icon">
-                        <a href="result.html" class="fa fa-search p-2 nav-link "></a>
-                    </li>
-    
-                    <li class="nav-item border rounded-circle mx-2 basket-icon">
-                        <a href="#" class="fa fa-shopping-basket p-2 nav-link"></a>
-                    </li>
-    
-                </div>
-              </nav>
-        </div>
-    </header>
+    <header class="fixed-top">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-4 col-sm-12 col-12 gender-box">
+                  Choose your gender :
+                  <div class="btn-group">
+                     <button class="btn border dropdown-toggle my-md-4 my-2 text-white"
+                     data-toggle="dropdown"
+                     aria-haspopup="true"
+                     aria-expanded="false"
+                     >Gender</button>
+                     <div class="dropdown-menu">
+                         <a href="#" class="dropdown-item">Male</a>
+                         <a href="#" class="dropdown-item">Female</a>
+                         <a href="#" class="dropdown-item">Other</a>
+                     </div>
+                 </div>
+              </div>
+              
+              <div class="col-md-4 col-12 text-center">
+                  <h3 class="my-md-1 site-title text-white">&diams; ANIMIZ &diams;</h3>
+                  <h6 class="my-md-2 text-white"><i class="fa fa-shopping-cart"></i> Shopping anytime anywhere</h6>
+              </div>
+              <div class="col-md-4 col-12 text-right">
+                  <p class="my-md-4 header-links">
+                      <a href="#" class="px-2">Login</a>
+                      <a href="#" class="px-1">Sign up</a>
+                  </p>
+              </div>
+              
+          </div>
+      </div>
+  <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Male Clothes</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Female Clothes</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Headware</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Accessory</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">About us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-nav">
+              <li class="btn">
+                  <input type="text" placeholder="Searching items">
+              </li>
+              <li class="btn">
+                  <i class="fa fa-search p-2"></i>
+              </li>
+              <li class="btn">
+                  <i class="fa fa-shopping-basket p-2"></i> 
+                  Cart: <span id="cartNumbers">0</span>
+              </li>
+          </div>
+        </nav>
+  </div>
+  </header>
     <!--End of header-->
 
     <!--Section Nav-->
