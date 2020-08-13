@@ -65,7 +65,10 @@ header .site-title{
     color: white;
 }
 /* Navigation Menu**/
-
+.p-0
+{
+    border-bottom: 1.5px solid #006c91 !important;
+}
 .nav-link
 {
     font-family: 'Bitter', serif !important ;
