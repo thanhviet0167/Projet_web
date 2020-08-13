@@ -14,7 +14,7 @@ function onLoadCartNumbers()
     let productNumbers = localStorage.getItem('cartNumbers');
     if(productNumbers)
     {
-        document.querySelector('#cartNumbers').textContent = productNumbers;
+        document.querySelector('.cartNumbers').textContent = productNumbers;
     }
 }
 
@@ -25,12 +25,12 @@ function cartNumbers()
     if(itemNumbers)
     {
         localStorage.setItem('cartNumbers', itemNumbers + 1);
-        document.querySelector('#cartNumbers').textContent = itemNumbers + 1;
+        document.querySelector('.cartNumbers').textContent = itemNumbers + 1;
     }
     else
     {
         localStorage.setItem('cartNumbers',1);
-        document.querySelector('#cartNumbers').textContent = 1
+        document.querySelector('.cartNumbers').textContent = 1
     }
 }
 
