@@ -37,7 +37,6 @@ header .site-title{
     font-family: var(--gugi);
 }
 
-
 .gender-box
 {
     font-size: 15px !important;
@@ -60,6 +59,15 @@ header .site-title{
     font-size: 15px;
     text-decoration: none;
     color: white;
+}
+
+.header-links button{
+    color: white;
+    background-color: #006c91;
+}
+.header-links button:hover{
+    color: white;
+    background-color: #004b64;
 }
 /* Navigation Menu**/
 
@@ -591,4 +599,7 @@ button:hover
 {
     left:0;
 }
-
+.modal-content
+{
+    border: 3px solid #0085b1;
+}

@@ -64,6 +64,15 @@ header .site-title{
     text-decoration: none;
     color: white;
 }
+
+.header-links button{
+    color: white;
+    background-color: #006c91;
+}
+.header-links button:hover{
+    color: white;
+    background-color: #004b64;
+}
 /* Navigation Menu**/
 .p-0
 {
@@ -602,4 +611,7 @@ button:hover
 
 *{box-sizing: border-box;}
 
-
+.modal-content
+{
+    border: 3px solid #0085b1;
+}
