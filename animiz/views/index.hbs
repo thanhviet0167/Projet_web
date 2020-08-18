@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--Link css and script-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+   <!--<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Header-->
+    <header class="fixed-top">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-4 col-sm-12 col-12 gender-box">
+                  Choose your gender :
+                  <div class="btn-group">
+                     <button class="btn border dropdown-toggle my-md-4 my-2 text-white"
+                     data-toggle="dropdown"
+                     aria-haspopup="true"
+                     aria-expanded="false"
+                     >Gender</button>
+                     <div class="dropdown-menu">
+                         <a href="#" class="dropdown-item">Male</a>
+                         <a href="#" class="dropdown-item">Female</a>
+                         <a href="#" class="dropdown-item">Other</a>
+                     </div>
+                 </div>
+              </div>
+              
+              <div class="col-md-4 col-12 text-center">
+                  <h3 class="my-md-1 site-title text-white">&diams; ANIMIZ &diams;</h3>
+                  <h6 class="my-md-2 text-white"><i class="fa fa-shopping-cart"></i> Shopping anytime anywhere</h6>
+              </div>
+              <div class="col-md-4 col-12 text-right">
+                  <p class="my-md-4 header-links">
+                      <button type="button" class="btn btn-primary px-2" data-toggle="modal" data-target="#login">
+                        Login
+                      </button>
+                      <button type="button" class="btn btn-primary px-2" data-toggle="modal" data-target="#sign-up">
+                        Sign Up
+                      </button>
+                  </p>
+              </div>
+              
+          </div>
+      </div>
+  <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Male Clothes</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Female Clothes</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Headware</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Accessory</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">About us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-nav">
+              <li class="btn">
+                  <input type="text" placeholder="Searching items">
+              </li>
+              <li class="btn">
+                  <i class="fa fa-search p-2"></i>
+              </li>
+              <li class="btn">
+                  <i class="fa fa-shopping-basket p-2"></i> 
+                  Cart: <span id="cartNumbers">0</span>
+              </li>
+          </div>
+        </nav>
+  </div>
+  </header>
+    <!--End of header-->
+
+    <!--Section Nav-->
+    <main>
+        <div class="container-fluid p-0">
+            <div class="site-slider">
+                <div class="slider-one">
+                    <div>
+                        <img src="/images/img/img_header/banner_1.jpg" class="img-fluid img-thumbnail" alt="Banner 1" />
+                    </div>
+                    <div>
+                        <img src="/images/img/img_header/banner_2.jpg" class="img-fluid img-thumbnail" alt="Banner 2" />
+                    </div>
+                    <div>
+                        <img src="/images/img/img_header/banner_3.jpg" class="img-fluid img-thumbnail" alt="Banner 3 " />
+                    </div>
+                </div>
+                <div class="slider-btn">
+                    <span class="prev position-top btn btn-secondary"><i class="fa fa-chevron-left"></i></span>
+                    <span class="next position-top right-0 btn btn-secondary"><i class="fa fa-chevron-right"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Slider -->
+
+        <div class="container-fluid">
+            <div class="site-slider-two px-md-4">
+                <p class="title-top-p">Top product</p>
+                <div class="row slider-two text-center">
+                    <div class="col-md-2 product pt-md-5 pt-4">
+                        <img src="/images/img/img_product/clothes_1.jpg" alt="Anime" />
+                        <span class="border site-btn btn-span">Tokyo Ghoul</span>
+                    </div>
+                    <div class="col-md-2 product pt-md-5 pt-4">
+                        <img src="/images/img/img_product/clothes_2.jpg" alt="Anime" />
+                        <span class="border site-btn btn-span">Kimetsu no yaiba</span>
+                    </div>
+                    <div class="col-md-2 product pt-md-5 pt-4">
+                        <img src="/images/img/img_product/clothes_3.jpg" alt="Anime" />
+                        <span class="border site-btn btn-span">Todoroki</span>
+                    </div>
+                    <div class="col-md-2 product pt-md-5 pt-4">
+                        <img src="/images/img/img_product/clothes_4.jpg" alt="Anime"/>
+                        <span class="border site-btn btn-span">Harajuku</span>
+                    </div>
+                    <div class="col-md-2 product pt-md-5 pt-4">
+                        <img src="/images/img/img_product/clothes_5.jpg" alt="Anime" />
+                        <span class="border site-btn btn-span">Asuka</span>
+                    </div>
+                    <div class="col-md-2 product pt-md-5 pt-4">
+                        <img src="/images/img/img_product/clothes_6.jpg" alt="Anime" />
+                        <span class="border site-btn btn-span">Hunter X Hunter</span>
+                    </div>
+                    <div class="col-md-2 product pt-md-5 pt-4">
+                        <img src="/images/img/img_product/clothes_7.jpg" alt="Anime" />
+                        <span class="border site-btn btn-span">Dragon Ball Z</span>
+                    </div>
+                    <div class="col-md-2 product pt-md-5 pt-4">
+                        <img src="/images/img/img_product/clothes_8.jpg" alt="Anime" />
+                        <span class="border site-btn btn-span">Naruto</span>
+                    </div>
+                    <div class="col-md-2 product pt-md-5 pt-4">
+                        <img src="/images/img/img_product/clothes_9.jpg" alt="Anime" />
+                        <span class="border site-btn btn-span">Otaku</span>
+                    </div>
+                    <div class="col-md-2 product pt-md-5 pt-4">
+                        <img src="/images/img/img_product/clothes_10.jpg" alt="Anime" />
+                        <span class="border site-btn btn-span">Hero Academia</span>
+                    </div>
+                </div>
+                <div class="slider-btn">
+                    <span class="prev position-top"><i class="fa fa-chevron-left fa-2x text-secondary"></i></span>
+                    <span class="next position-top right-0"><i class="fa fa-chevron-right fa-2x text-secondary"></i></span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--End Section Nav-->
+
+
+    <!--Service Section-->
+    <section class="services py-5 text-center">
+        <div class="container">
+            <div class="row">
+                 <!--Single service-->
+                 <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
+                    <span class="service-icon">
+                        <i class="fa fa-globe fa-2x"></i>
+                    </span>
+                    <h5 class="font-weight-bold text-uppercase">Design by VS</h5>
+                    <p class="text-capitalize">Welcome to shop anime and were  !!!</p>
+                </div>
+                <!--End of single service-->
+                <!--Single service-->
+                <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
+                    <span class="service-icon">
+                        <i class="fa fa-stamp fa-2x"></i>
+                    </span>
+                    <h5 class="font-weight-bold text-uppercase">Worldwide Shipping</h5>
+                    <p class="text-capitalize">we hope you can buy everything that you like !!!</p>
+                </div>
+                <!--End of single service-->
+                 <!--Single service-->
+                 <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
+                    <span class="service-icon">
+                        <i class="fa fa-file-invoice-dollar fa-2x"></i>
+                    </span>
+                    <h5 class="font-weight-bold text-uppercase">Worldwide Shopping</h5>
+                    <p class="text-capitalize">30 Days Money</p>
+                </div>
+                <!--End of single service-->
+            </div>
+        </div>
+    </section>
+
+
+    <!--Featured products -->
+    <section id="products" class="products py-5">
+        <div class="container">
+            <!--Sectiton title-->
+            <div class="row">
+                <div class="col-10 mx-auto col-sm-6 text-center">
+                    <h1 class="text-capitalize product-title">
+                        Features products
+                    </h1>
+                </div>
+            </div>
+            <!--End of section title-->
+
+
+            <!--Products iteam col-1-->
+            <div class="row product-items" id="products-items">
+                <!--Single iteam-->
+                <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <div class="img-container">
+                            <img src="/images/img/img_product/f_clothes_1.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">3D Short Kimetsu no yaiba</h5>
+                                <span><i class="fas fa-dollar-sign"></i>5.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of single iteam-->
+                 <!--Single iteam-->
+                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <div class="img-container">
+                            <img src="/images/img/img_product/f_clothes_2.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">Boku no hero academi pan</h5>
+                                <span><i class="fas fa-dollar-sign"></i>3.55</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of single iteam-->
+                 <!--Single iteam-->
+                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <div class="img-container">
+                            <img src="/images/img/img_product/f_clothes_3.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">Gaya Kasual Untuk Unisex</h5>
+                                <span><i class="fas fa-dollar-sign"></i>6.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of single iteam-->
+            </div>
+            <!--End of products iteam-->
+
+
+             <!--Products iteam col-2-->
+             <div class="row product-items" id="products-items">
+                <!--Single iteam-->
+                <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <div class="img-container">
+                            <img src="/images/img/img_product/f_clothes_4.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">Phone case anime SAO</h5>
+                                <span><i class="fas fa-dollar-sign"></i>2.33</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of single iteam-->
+                 <!--Single iteam-->
+                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <div class="img-container">
+                            <img src="/images/img/img_product/f_clothes_5.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">Phone case Date A Live</h5>
+                                <span><i class="fas fa-dollar-sign"></i>1.22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of single iteam-->
+                 <!--Single iteam-->
+                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <div class="img-container">
+                            <img src="/images/img/img_product/f_clothes_6.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">Phone case Sasuke</h5>
+                                <span><i class="fas fa-dollar-sign"></i>3.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of single iteam-->
+            </div>
+            <!--End of products iteam-->
+
+
+
+             <!--Products iteam col-3-->
+             <div class="row product-items" id="products-items">
+                <!--Single iteam-->
+                <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <div class="img-container">
+                            <img src="/images/img/img_product/f_clothes_7.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">Phone case One piece</h5>
+                                <span><i class="fas fa-dollar-sign"></i>4.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of single iteam-->
+                 <!--Single iteam-->
+                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <div class="img-container">
+                            <img src="/images/img/img_product/f_clothes_8.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">Keychain anime</h5>
+                                <span><i class="fas fa-dollar-sign"></i>1.02</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of single iteam-->
+                 <!--Single iteam-->
+                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <div class="img-container">
+                            <img src="/images/img/img_product/anime_1.png" alt="" class="card-img-top product-img" width="300" height="200"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">T-shirt 3d Rem</h5>
+                                <span><i class="fas fa-dollar-sign"></i>7.78</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of single iteam-->
+            </div>
+            <!--End of products iteam-->
+
+
+             <!--Products iteam col-4-->
+             <div class="row product-items" id="products-items">
+                <!--Single iteam-->
+                <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <div class="img-container">
+                            <img src="/images/img/img_product/anime_2.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">T-shirt 3d Tokisaki</h5>
+                                <span><i class="fas fa-dollar-sign"></i>8.22</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of single iteam-->
+                 <!--Single iteam-->
+                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <div class="img-container">
+                            <img src="/images/img/img_product/anime_3.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">T-shirt 3d One piece</h5>
+                                <span><i class="fas fa-dollar-sign"></i>14.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of single iteam-->
+                 <!--Single iteam-->
+                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <div class="img-container">
+                            <img src="/images/img/img_product/anime_4.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">T-shirt 3d Takagi</h5>
+                                <span><i class="fas fa-dollar-sign"></i>9.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of single iteam-->
+            </div>
+            <!--End of products iteam-->
+
+        
+        </div>
+    </section> 
+
+    <!--Product Section-->
+
+    <div class="container product-section">
+        <h2>New clothes anime</h2>
+        <div class="row">
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/clothes_1.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Add to Wishlist">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Add to Cart">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-half-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+  
+          <!---->
+  
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/f_clothes_1.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+  
+          <!---->
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/clothes_2.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+          <!---->
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/f_clothes_2.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+        </div>
+  
+        <!--Product 2-->
+  
+        <div class="row">
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/clothes_3.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Add to Wishlist">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary add-cart" title="Add to Cart">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-half-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+  
+          <!---->
+  
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/f_clothes_3.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+  
+          <!---->
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/clothes_4.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+          <!---->
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/f_clothes_4.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+        </div>
+  
+        <!--Product 3-->
+  
+        <div class="row">
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/f_clothes_5.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Add to Wishlist">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary add-cart" title="Add to Cart">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-half-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+  
+          <!---->
+  
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/clothes_5.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+  
+          <!---->
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/clothes_6.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+          <!---->
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/f_clothes_6.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+        </div>
+  
+        <!--Product 4-->
+  
+        <div class="row">
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/clothes_7.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Add to Wishlist">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary add-cart" title="Add to Cart">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-half-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+  
+          <!---->
+  
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/f_clothes_7.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+  
+          <!---->
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/f_clothes_8.jpg" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+          <!---->
+          <div class="col-md-3 item-2">
+            <div class="product-top text-center">
+              <img src="/images/img/img_product/anime_1.png" width="200px" height="220px"/>
+              <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-eye"></i>
+                </button>
+                <button type="button" class="btn btn-secondary" title="Quick Shop">
+                  <i class="fa fa-heart-o"></i>
+                </button>
+                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-bottom text-center">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <h3>Anime Clother 1</h3>
+              <h5>$200</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+    <!--About section-->
+
+    <div id="about-sec">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-5 text-center">
+                  <img src="/images/img/bg1.jpg" width="400" height="150" class="img-fluid watch-img" />
+              </div>
+              <div class="col-lg-7 text-lg-right text-center text-color about-text">
+                  <h1>About Animiz</h1>
+                  <p class="text">We hope you are happy today</p>
+              </div>
+          </div>
+          
+      </div>
+    </div>
+    
+
+
+
+    <!--Footer-->
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1><img src="/images/img/logo.png" height=55px>ANIMIZ</h1>
+                <p>
+                    Animiz, an online shop established to serve the purpose of shopping online. 
+                    Animiz has the huge amount of wearable products with different sizes 
+                    varying from small to large, and suitable for all age groups.
+                </p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i> &nbsp; 033-790-7047</span>
+                    <span><i class="fas fa-envelope"></i> &nbsp; animiz@gmail.com</span>
+                </div>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section products">
+                <h2>Products:</h2>
+                <p>
+                    <ul>
+                        <div class="products">
+                        <li><a href="#">Clothes</a></li>
+                        <li><a href="#">Headwares</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        </div>
+                    </ul>
+                </p>
+                <hr>
+                
+                <h2>Payment methods:</h2>
+                    <ul>
+                        <li><i class="fab fa-cc-visa"></i> Visa</li>
+                        <li><i class="fab fa-cc-mastercard"></i> Master cards</li>
+                        <li><i class="fab fa-cc-paypal"></i> Paypal</li>
+                    </ul>
+            </div>
+            <div class="footer-section contact-form">
+                <h2>Contact us</h2>
+                <p class="description-feedback">In case of troubles, please send us your detailed feedback to help us improve our service. We will examine and reply to your feedback as soon as possible.</p>
+                <form action="./index.html" method="GET">
+                    Enter your email:
+                    <p>
+                    <input type="email" name="email" class="text-input contact-input form-control" placeholder="Your email address:">
+                    </p>
+                    Feedback:
+                    <p>
+                        <textarea name="message"class="text-input contact-input form-control" placeholder="Your message..."></textarea>
+                    </p>
+                    <p>
+                    <button type="submit" style=" color:white; border:1px solid white;" class="btn btn-big btn-primary" onclick="return Send_mess()">
+                        <i class="fas fa-envelope"></i>
+                        Send
+                    </button>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; Designed by Nguyen Sang, Thanh Viet
+        </div>
+    </div>
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          <style>
+              .login-form{
+                  text-align: center;
+                  font-family: 'Bitter', serif;
+                  color: #00778b !important;
+              }
+              .login-button{
+                  background-color:#00778b ;
+                  color: white;
+              }
+              .login-button:hover{
+                  background-color:#009fbb ;
+                  color: white;
+              }
+              .login-container.form-group
+              {
+                  border: 3px solid #00778b !important;
+              }
+          </style>
+          <div class="modal-body">
+              <div class="login-container">
+                  <form class="login-form">
+                      <h1>Login</h1>
+                      <h6>Fill your account into this form to login</h6>
+                      <hr>
+                      <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Username" />
+                      </div>
+                      <br>
+                      <div class="form-group">
+                          <input type="password" class="form-control" placeholder="Password" />
+                      </div>
+                      <br>
+                      <div class="forgot-link">
+                          <div class="form">
+                              <input type="checkbox" name="remember" value="">
+                              <label for="remember">Remember your account</label>
+                          </div>
+                          <p>
+                              <a href="#">Forgot Password?</a>
+                          </p>
+                      </div>
+                      <button type="submit" class="btn mt-5 btn-custom btn-primary btn-block rounded-pill btn-lg login-button">Login</button>
+                      <p class="mt-3 font-weight-normal">Don't have an account <a href="#"><strong class="text-primary">Register now</strong></a></p>
+                  </form>
+              </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+      </div>
+      </div>
+  </div>
+  <div class="modal fade" id="sign-up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          <style>
+              .sign-up{
+                  font-family: 'Bitter', serif;
+                  color: #00778b !important;
+              }
+              .form-group
+              {
+                  margin-top: 0px !important;
+                  margin-bottom: 0px !important;
+                  text-align: left !important;
+              }
+              .form-control
+              {
+                  margin: 0px;
+                  border: 3px solid #00778b !important;
+              }
+              
+          </style>
+          <div class="modal-body">
+              <div class="sign-up">
+                  <h1 class="text-center">Registration form</h1>
+                  <hr>
+                  <form class="form-group text-center">
+                     <!--First and last name-->
+                      <div class="row">
+                          <div class="col-lg-6">
+                              <label class="font-weight-bold">First name:</label>
+                              <input type="text" name="first-name" class="form-control" placeholder="Enter your First name......"/>
+                          </div>
+                          <div class="col-lg-6">
+                              <label class="font-weight-bold">Last name:</label>
+                              <input type="text" name="last-name" class="form-control" placeholder="Enter your Last name......"/>
+                          </div>
+                      </div> 
+                      <!--Adress Email-->
+                      <label class="font-weight-bold">Email</label>
+                      <input type="email" name="email" class="form-control" placeholder="Enter your Email....."/>
+
+                      <!---->
+                      <div class="row">
+                          <div class="col-lg-6">
+                              <label class="font-weight-bold">Password:</label>
+                              <input type="password" name="password" class="form-control" placeholder="Enter new Password......"/>
+                          </div>
+                          <div class="col-lg-6">
+                              <label class="font-weight-bold">Re-type Password:</label>
+                              <input type="password" name="R_password" class="form-control" placeholder="Enter Password again......"/>
+                          </div>
+                     </div>
+                     <br />
+                     <select class="form-control form-control-lg">
+                         <option>Gender</option>
+                         <option>Male</option>
+                         <option>Female</option>
+                         <option>Other</option>
+                     </select>
+                     <br />
+                     <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-block btn-lg"/>
+                 </form>
+              </div>
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+      </div>
+
+
+    
+    <!--Link script-->
+    <script src="/javascripts/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="/javascripts/program.js"></script>
+</body>
+</html>
