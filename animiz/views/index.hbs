@@ -123,7 +123,39 @@
                 </div>
             </div>
         </div>
+        <!--
+        <div class="row">HelloHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</div>
+         {{# each products}}
 
+         <div class="row product-items" id="products-items">
+                
+                 {{# each this}}
+                <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <div class="img-container">
+                            <img src="{{this.imgPath}}" alt="" class="card-img-top product-img" width="300" height="200"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">{{this.title}}</h5>
+                                <span><i class="fas fa-dollar-sign"></i>5.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             {{/each}}
+         </div>
+      
+
+        {{/each}} -->
+        {{# each products}}
+          {{# each this}}
+          <div class="row">
+            <img src="{{this.imgPath}}"/>
+            <p>{{this.title}}</p>
+          </div>
+          {{/each}}
+        {{/each}}
         <!-- Second Slider -->
 
         <div class="container-fluid">
@@ -466,8 +498,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-o"></i>
               <i class="fa fa-star-half-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Tokyo Ghoul</h3>
+              <h5>$2.49</h5>
             </div>
           </div>
   
@@ -494,8 +526,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-half-o"></i>
               <i class="fa fa-star-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>3D Short Kimetsu No Yaiba</h3>
+              <h5>$5.99</h5>
             </div>
           </div>
   
@@ -521,8 +553,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-half-o"></i>
               <i class="fa fa-star-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Kimetsu No Yaiba</h3>
+              <h5>$2.22</h5>
             </div>
           </div>
           <!---->
@@ -547,8 +579,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-half-o"></i>
               <i class="fa fa-star-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Boku No Hero Academi Pan</h3>
+              <h5>$3.55</h5>
             </div>
           </div>
         </div>
@@ -577,8 +609,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-o"></i>
               <i class="fa fa-star-half-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Todoroki</h3>
+              <h5>$2.99</h5>
             </div>
           </div>
   
@@ -605,8 +637,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-half-o"></i>
               <i class="fa fa-star-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Gaya Kasual Untuk Unisex</h3>
+              <h5>$6.99</h5>
             </div>
           </div>
   
@@ -632,8 +664,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-half-o"></i>
               <i class="fa fa-star-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Harajuku</h3>
+              <h5>$3.52</h5>
             </div>
           </div>
           <!---->
@@ -658,8 +690,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-half-o"></i>
               <i class="fa fa-star-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Phone Case SAO</h3>
+              <h5>$2.33</h5>
             </div>
           </div>
         </div>
@@ -688,8 +720,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-o"></i>
               <i class="fa fa-star-half-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Phone Case Date A Live</h3>
+              <h5>$1.22</h5>
             </div>
           </div>
   
@@ -716,8 +748,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-half-o"></i>
               <i class="fa fa-star-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Asuka</h3>
+              <h5>$1.99</h5>
             </div>
           </div>
   
@@ -743,8 +775,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-half-o"></i>
               <i class="fa fa-star-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Hunter X Hunter</h3>
+              <h5>$3.15</h5>
             </div>
           </div>
           <!---->
@@ -769,8 +801,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-half-o"></i>
               <i class="fa fa-star-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Phone Case Sasuke</h3>
+              <h5>$3.99</h5>
             </div>
           </div>
         </div>
@@ -799,8 +831,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-o"></i>
               <i class="fa fa-star-half-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Dragon Ball Z</h3>
+              <h5>$1.25</h5>
             </div>
           </div>
   
@@ -827,8 +859,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-half-o"></i>
               <i class="fa fa-star-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Phone Case One Piece</h3>
+              <h5>$4.99</h5>
             </div>
           </div>
   
@@ -854,8 +886,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-half-o"></i>
               <i class="fa fa-star-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>Keychain Anime</h3>
+              <h5>$1.02</h5>
             </div>
           </div>
           <!---->
@@ -880,8 +912,8 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-half-o"></i>
               <i class="fa fa-star-o"></i>
-              <h3>Anime Clother 1</h3>
-              <h5>$200</h5>
+              <h3>T-Shirt 3D Rem</h3>
+              <h5>$7.78</h5>
             </div>
           </div>
         </div>
@@ -1113,7 +1145,8 @@
           </div>
       </div>
 
-
+    
+   
     
     <!--Link script-->
     <script src="/javascripts/main.js"></script>

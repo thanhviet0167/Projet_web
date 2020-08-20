@@ -9,9 +9,27 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+var expressHbs = require('express-handlebars');
+
+//var mongodb = require('mongoose');
+/*
+var MongoClient = require('mongodb').MongoClient, format = require('util').format;
+MongoClient.connect('mongodb://127.0.0.1:27017', function(err, db){
+  if(err){
+    throw err;
+  }
+  else{
+    console.log("Connected");
+  }
+  db.close();
+}); */
+//mongodb.connect('localhost:27017/shopping');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+//app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname:'.hbs'}));
+//app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
