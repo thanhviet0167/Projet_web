@@ -84,12 +84,12 @@
             </ul>
           </div>
           <div class="navbar-nav">
-              <li class="btn">
-                  <input type="text" placeholder="Searching items">
-              </li>
-              <li class="btn">
-                  <i class="fa fa-search p-2"></i>
-              </li>
+            <form action="/search" method="GET" class="form-inline">
+              <div class="form-group">
+                <input type="text" name="search" placeholder="Searching items" class="form-control">
+                <button type="submit" class="btn btn-default"><i class="fa fa-search p-2"></i></button>
+              </div>
+            </form>
               <li class="btn">
                   <i class="fa fa-shopping-basket p-2"></i> 
                   Cart: <span id="cartNumbers">0</span>
