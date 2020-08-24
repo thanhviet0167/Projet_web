@@ -19,7 +19,7 @@
 </head>
 <body>
     <!--Header-->
-    <header class="fixed-top">
+    <header class="fixed-top" >
       <div class="container-fluid">
           <div class="row">
               <div class="col-md-4 col-sm-12 col-12 gender-box">
@@ -104,7 +104,7 @@
     <!--End of header-->
 
     <!--Section Nav-->
-    <main>
+    <main style="margin-top:10%">
         <div class="container-fluid p-0">
             <div class="site-slider">
                 <div class="slider-one">
@@ -128,53 +128,20 @@
 
         <div class="container-fluid">
             <div class="site-slider-two px-md-4">
-                <p class="title-top-p">Top product</p>
-                <div class="row slider-two text-center">
-                    <div class="col-md-2 product pt-md-5 pt-4">
-                        <img src="/images/img/img_product/clothes_1.jpg" alt="Anime" />
-                        <span class="border site-btn btn-span">Tokyo Ghoul</span>
-                    </div>
-                    <div class="col-md-2 product pt-md-5 pt-4">
-                        <img src="/images/img/img_product/clothes_2.jpg" alt="Anime" />
-                        <span class="border site-btn btn-span">Kimetsu no yaiba</span>
-                    </div>
-                    <div class="col-md-2 product pt-md-5 pt-4">
-                        <img src="/images/img/img_product/clothes_3.jpg" alt="Anime" />
-                        <span class="border site-btn btn-span">Todoroki</span>
-                    </div>
-                    <div class="col-md-2 product pt-md-5 pt-4">
-                        <img src="/images/img/img_product/clothes_4.jpg" alt="Anime"/>
-                        <span class="border site-btn btn-span">Harajuku</span>
-                    </div>
-                    <div class="col-md-2 product pt-md-5 pt-4">
-                        <img src="/images/img/img_product/clothes_5.jpg" alt="Anime" />
-                        <span class="border site-btn btn-span">Asuka</span>
-                    </div>
-                    <div class="col-md-2 product pt-md-5 pt-4">
-                        <img src="/images/img/img_product/clothes_6.jpg" alt="Anime" />
-                        <span class="border site-btn btn-span">Hunter X Hunter</span>
-                    </div>
-                    <div class="col-md-2 product pt-md-5 pt-4">
-                        <img src="/images/img/img_product/clothes_7.jpg" alt="Anime" />
-                        <span class="border site-btn btn-span">Dragon Ball Z</span>
-                    </div>
-                    <div class="col-md-2 product pt-md-5 pt-4">
-                        <img src="/images/img/img_product/clothes_8.jpg" alt="Anime" />
-                        <span class="border site-btn btn-span">Naruto</span>
-                    </div>
-                    <div class="col-md-2 product pt-md-5 pt-4">
-                        <img src="/images/img/img_product/clothes_9.jpg" alt="Anime" />
-                        <span class="border site-btn btn-span">Otaku</span>
-                    </div>
-                    <div class="col-md-2 product pt-md-5 pt-4">
-                        <img src="/images/img/img_product/clothes_10.jpg" alt="Anime" />
-                        <span class="border site-btn btn-span">Hero Academia</span>
-                    </div>
-                </div>
-                <div class="slider-btn">
-                    <span class="prev position-top"><i class="fa fa-chevron-left fa-2x text-secondary"></i></span>
-                    <span class="next position-top right-0"><i class="fa fa-chevron-right fa-2x text-secondary"></i></span>
-                </div>
+              <p class="title-top-p">Top product</p>
+              <div class="row slider-two text-center">
+                  {{# each top_product}}
+                  <div class="col-md-2 product pt-md-5 pt-4">
+                      {{# each this}}
+                      <img src="{{this.imgPath}}" alt="{{this.title}}" />
+                      <a href="/product?id={{this._id}}" style="text-decoration:none"><span class="border site-btn btn-span">{{this.title}}</span></a>
+                      {{/each}}
+                  </div>
+                  {{/each}}          
+            </div>
+            <div class="slider-btn">
+                <span class="prev position-top"><i class="fa fa-chevron-left fa-2x text-secondary"></i></span>
+                <span class="next position-top right-0"><i class="fa fa-chevron-right fa-2x text-secondary"></i></span>
             </div>
         </div>
     </main>
@@ -480,14 +447,16 @@
     <!--Product Section-->
 
     <div class="container product-section">
-        <h2>New clothes anime</h2>
-        <div class="row">
+      <h2>New clothes anime</h2>
+      <div class="row">
+          {{# each products}}
           <div class="col-md-3 item-2">
+            {{# each this}}
             <div class="product-top text-center">
-              <img src="/images/img/img_product/clothes_1.jpg" width="200px" height="220px"/>
+              <img src="{{this.imgPath}}" width="200px" height="220px"/>
               <div class="overlay">
                 <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
+                  <a href="/product?id={{this._id}}"><i class="fa fa-eye"></i></a>
                 </button>
                 <button type="button" class="btn btn-secondary" title="Add to Wishlist">
                   <i class="fa fa-heart-o"></i>
@@ -503,426 +472,14 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-o"></i>
               <i class="fa fa-star-half-o"></i>
-              <h3>Tokyo Ghoul</h3>
-              <h5>$2.49</h5>
+              <h3>{{this.title}}</h3>
+              <h5>${{this.price}}</h5>
             </div>
+             {{/each}}
           </div>
-  
-          <!---->
-  
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/f_clothes_1.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-              <h3>3D Short Kimetsu No Yaiba</h3>
-              <h5>$5.99</h5>
-            </div>
-          </div>
-  
-          <!---->
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/clothes_2.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-              <h3>Kimetsu No Yaiba</h3>
-              <h5>$2.22</h5>
-            </div>
-          </div>
-          <!---->
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/f_clothes_2.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-              <h3>Boku No Hero Academi Pan</h3>
-              <h5>$3.55</h5>
-            </div>
-          </div>
-        </div>
-  
-        <!--Product 2-->
-  
-        <div class="row">
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/clothes_3.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Add to Wishlist">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary add-cart" title="Add to Cart">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-o"></i>
-              <i class="fa fa-star-half-o"></i>
-              <h3>Todoroki</h3>
-              <h5>$2.99</h5>
-            </div>
-          </div>
-  
-          <!---->
-  
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/f_clothes_3.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-              <h3>Gaya Kasual Untuk Unisex</h3>
-              <h5>$6.99</h5>
-            </div>
-          </div>
-  
-          <!---->
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/clothes_4.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-              <h3>Harajuku</h3>
-              <h5>$3.52</h5>
-            </div>
-          </div>
-          <!---->
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/f_clothes_4.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-              <h3>Phone Case SAO</h3>
-              <h5>$2.33</h5>
-            </div>
-          </div>
-        </div>
-  
-        <!--Product 3-->
-  
-        <div class="row">
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/f_clothes_5.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Add to Wishlist">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary add-cart" title="Add to Cart">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-o"></i>
-              <i class="fa fa-star-half-o"></i>
-              <h3>Phone Case Date A Live</h3>
-              <h5>$1.22</h5>
-            </div>
-          </div>
-  
-          <!---->
-  
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/clothes_5.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-              <h3>Asuka</h3>
-              <h5>$1.99</h5>
-            </div>
-          </div>
-  
-          <!---->
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/clothes_6.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-              <h3>Hunter X Hunter</h3>
-              <h5>$3.15</h5>
-            </div>
-          </div>
-          <!---->
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/f_clothes_6.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-              <h3>Phone Case Sasuke</h3>
-              <h5>$3.99</h5>
-            </div>
-          </div>
-        </div>
-  
-        <!--Product 4-->
-  
-        <div class="row">
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/clothes_7.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Add to Wishlist">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary add-cart" title="Add to Cart">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-o"></i>
-              <i class="fa fa-star-half-o"></i>
-              <h3>Dragon Ball Z</h3>
-              <h5>$1.25</h5>
-            </div>
-          </div>
-  
-          <!---->
-  
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/f_clothes_7.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-              <h3>Phone Case One Piece</h3>
-              <h5>$4.99</h5>
-            </div>
-          </div>
-  
-          <!---->
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/f_clothes_8.jpg" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-              <h3>Keychain Anime</h3>
-              <h5>$1.02</h5>
-            </div>
-          </div>
-          <!---->
-          <div class="col-md-3 item-2">
-            <div class="product-top text-center">
-              <img src="/images/img/img_product/anime_1.png" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary add-cart" title="Quick Shop">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-o"></i>
-              <i class="fa fa-star-o"></i>
-              <h3>T-Shirt 3D Rem</h3>
-              <h5>$7.78</h5>
-            </div>
-          </div>
-        </div>
-      </div>
+          {{/each}}
+        </div>  
+    </div>
 
     
     <!--About section-->
@@ -1075,84 +632,84 @@
       </div>
   </div>
   <div class="modal fade" id="sign-up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-          </div>
-          <style>
-              .sign-up{
-                  font-family: 'Bitter', serif;
-                  color: #00778b !important;
-              }
-              .form-group
-              {
-                  margin-top: 0px !important;
-                  margin-bottom: 0px !important;
-                  text-align: left !important;
-              }
-              .form-control
-              {
-                  margin: 0px;
-                  border: 3px solid #00778b !important;
-              }
-              
-          </style>
-          <div class="modal-body">
-              <div class="sign-up">
-                  <h1 class="text-center">Registration form</h1>
-                  <hr>
-                  <form class="form-group text-center">
-                     <!--First and last name-->
-                      <div class="row">
-                          <div class="col-lg-6">
-                              <label class="font-weight-bold">First name:</label>
-                              <input type="text" name="first-name" class="form-control" placeholder="Enter your First name......"/>
-                          </div>
-                          <div class="col-lg-6">
-                              <label class="font-weight-bold">Last name:</label>
-                              <input type="text" name="last-name" class="form-control" placeholder="Enter your Last name......"/>
-                          </div>
-                      </div> 
-                      <!--Adress Email-->
-                      <label class="font-weight-bold">Email</label>
-                      <input type="email" name="email" class="form-control" placeholder="Enter your Email....."/>
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <style>
+                .sign-up{
+                    font-family: 'Bitter', serif;
+                    color: #00778b !important;
+                    
+                }
+                .form-group
+                {
+                    margin-top: 0px !important;
+                    margin-bottom: 0px !important;
+                    text-align: left !important;
+                }
+                .form-control
+                {
+                    margin: 0px;
+                    border: 3px solid #00778b !important;
+                }
+                .modal-body
+                {
+                    height: 500px !important;
+                }
+            </style>
+            <div class="modal-body">
+                <div class="sign-up" onclick="checkSignUpValid()">
+                    <h1 class="text-center">Registration form</h1>
+                    <hr>
+                    <form class="form-group text-center">
+                       <!--First and last name-->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label class="font-weight-bold">Username:</label>
+                                <input type="text" id="userNameSignUp" name="user-name" class="form-control" placeholder="Enter your Username......"/>
+                            </div>
+                        </div> 
+                        <!--Adress Email-->
+                        <label class="font-weight-bold">Email</label>
+                        <input type="email" id="emailSignUp" name="email" class="form-control" placeholder="Enter your Email....."/>
 
-                      <!---->
-                      <div class="row">
-                          <div class="col-lg-6">
-                              <label class="font-weight-bold">Password:</label>
-                              <input type="password" name="password" class="form-control" placeholder="Enter new Password......"/>
-                          </div>
-                          <div class="col-lg-6">
-                              <label class="font-weight-bold">Re-type Password:</label>
-                              <input type="password" name="R_password" class="form-control" placeholder="Enter Password again......"/>
-                          </div>
-                     </div>
-                     <br />
-                     <select class="form-control form-control-lg">
-                         <option>Gender</option>
-                         <option>Male</option>
-                         <option>Female</option>
-                         <option>Other</option>
-                     </select>
-                     <br />
-                     <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-block btn-lg"/>
-                 </form>
-              </div>
-          </div>
-          <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-      </div>
+                        <!---->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="font-weight-bold">Password:</label>
+                                <input type="password" id="passwordSignUp" name="password" class="form-control" placeholder="Enter new Password......"/>
+                            </div>
+                            <span id="security-password"></span>
+                            <div class="col-lg-6">
+                                <label class="font-weight-bold">Re-type Password:</label>
+                                <input type="password" id="rePasswordSignUp" name="R_password" class="form-control" placeholder="Enter Password again......"/>
+                            </div>
+                        </div>
+                        <br />
+                        <select id="genderSignUp" style="display:inline-block;" class="form-control form-control-lg" >
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                        <br />
+                        <p>
+                            <span id="alert-box" style="color:red; font-size: 15px; text-indent: 1%;"></span>
+                        </p>
+                       <input type="submit" name="submit" onclick="checkSignUpValid()" value="Submit" style="line-height: 100%;" class="btn btn-primary btn-block btn-lg"/>
+                   </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+        </div>
+    </div>
 
-    
-   
-    
     <!--Link script-->
     <script src="/javascripts/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -1160,5 +717,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="/javascripts/program.js"></script>
+    <script src="/javascripts/script.js"></script>
 </body>
 </html>

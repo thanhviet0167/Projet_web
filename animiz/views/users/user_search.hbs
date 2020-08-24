@@ -18,7 +18,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
-     <!--Header-->
+    <!--Header-->
+    <!--Header-->
     <header class="fixed-top">
       <div class="container-fluid">
           <div class="row">
@@ -31,9 +32,9 @@
                      aria-expanded="false"
                      >Gender</button>
                      <div class="dropdown-menu">
-                         <a href="#" class="dropdown-item">Male</a>
-                         <a href="#" class="dropdown-item">Female</a>
-                         <a href="#" class="dropdown-item">Other</a>
+                         <a href="/search?search={{search_value}}{{link_price}}&type=male" class="dropdown-item">Male</a>
+                         <a href="/search?search={{search_value}}{{link_price}}&type=female" class="dropdown-item">Female</a>
+                         <a href="/search?search={{search_value}}{{link_price}}&type=other" class="dropdown-item">Other</a>
                      </div>
                  </div>
               </div>
@@ -89,7 +90,7 @@
             </ul>
           </div>
           <div class="navbar-nav">
-            <form action="/user/search" method="GET" class="form-inline">
+            <form action="/search" method="GET" class="form-inline">
               <div class="form-group">
                 <input type="text" name="search" placeholder="Searching items" class="form-control">
                 <button type="submit" class="btn btn-default"><i class="fa fa-search p-2"></i></button>
@@ -106,8 +107,23 @@
 
 
     <!--End of header-->
-    
-    <div class="container product-section" id="product_section" style="margin-top:15%">
+    <div class="gender-box text-dark" style="margin-top:10%; margin-left:14%">
+                    Sort by : 
+                  <div class="btn-group">
+                     <button class="btn border dropdown-option my-md-4 my-2 text-dark"
+                     data-toggle="dropdown"
+                     aria-haspopup="true"
+                     aria-expanded="false"
+                     >Choose your option</button>
+                     <div class="dropdown-menu">
+                         <a href="/search?search={{search_value}}{{link_type}}&sort=discount" class="dropdown-item">Price low to high</a>
+                         <a href="/search?search={{search_value}}{{link_type}}&sort=increase" class="dropdown-item">Price high to low</a>
+                         
+    </div>
+                     
+    </div>
+    </div>
+    <div class="container product-section" id="product_section" style="margin-top:5%">
         <h2>Search Results</h2>
         <h3>{{title}}</h3>
         <div class="row">
@@ -212,7 +228,145 @@
             &copy; Designed by Nguyen Sang, Thanh Viet
         </div>
     </div>
-    
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          <style>
+              .login-form{
+                  text-align: center;
+                  font-family: 'Bitter', serif;
+                  color: #00778b !important;
+              }
+              .login-button{
+                  background-color:#00778b ;
+                  color: white;
+              }
+              .login-button:hover{
+                  background-color:#009fbb ;
+                  color: white;
+              }
+              .login-container.form-group
+              {
+                  border: 3px solid #00778b !important;
+              }
+          </style>
+          <div class="modal-body">
+              <div class="login-container">
+                  <form class="login-form" action="/user/search" method="GET">
+                      <h1>Login</h1>
+                      <h6>Fill your account into this form to login</h6>
+                      <hr>
+                      <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Username" />
+                      </div>
+                      <br>
+                      <div class="form-group">
+                          <input type="password" class="form-control" placeholder="Password" />
+                      </div>
+                      <br>
+                      <div class="forgot-link">
+                          <div class="form">
+                              <input type="checkbox" name="remember" value="">
+                              <label for="remember">Remember your account</label>
+                          </div>
+                          <p>
+                              <a href="#">Forgot Password?</a>
+                          </p>
+                      </div>
+                      <button type="submit" class="btn mt-5 btn-custom btn-primary btn-block rounded-pill btn-lg login-button">Login</button>
+                      <p class="mt-3 font-weight-normal">Don't have an account <a href="#"><strong class="text-primary">Register now</strong></a></p>
+                  </form>
+              </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+      </div>
+      </div>
+  </div>
+  <div class="modal fade" id="sign-up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <style>
+                .sign-up{
+                    font-family: 'Bitter', serif;
+                    color: #00778b !important;
+                    
+                }
+                .form-group
+                {
+                    margin-top: 0px !important;
+                    margin-bottom: 0px !important;
+                    text-align: left !important;
+                }
+                .form-control
+                {
+                    margin: 0px;
+                    border: 3px solid #00778b !important;
+                }
+                .modal-body
+                {
+                    height: 500px !important;
+                }
+            </style>
+            <div class="modal-body">
+                <div class="sign-up" onclick="checkSignUpValid()">
+                    <h1 class="text-center">Registration form</h1>
+                    <hr>
+                    <form class="form-group text-center">
+                       <!--First and last name-->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label class="font-weight-bold">Username:</label>
+                                <input type="text" id="userNameSignUp" name="user-name" class="form-control" placeholder="Enter your Username......"/>
+                            </div>
+                        </div> 
+                        <!--Adress Email-->
+                        <label class="font-weight-bold">Email</label>
+                        <input type="email" id="emailSignUp" name="email" class="form-control" placeholder="Enter your Email....."/>
+
+                        <!---->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="font-weight-bold">Password:</label>
+                                <input type="password" id="passwordSignUp" name="password" class="form-control" placeholder="Enter new Password......"/>
+                            </div>
+                            <span id="security-password"></span>
+                            <div class="col-lg-6">
+                                <label class="font-weight-bold">Re-type Password:</label>
+                                <input type="password" id="rePasswordSignUp" name="R_password" class="form-control" placeholder="Enter Password again......"/>
+                            </div>
+                        </div>
+                        <br />
+                        <select id="genderSignUp" style="display:inline-block;" class="form-control form-control-lg" >
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                        <br />
+                        <p>
+                            <span id="alert-box" style="color:red; font-size: 15px; text-indent: 1%;"></span>
+                        </p>
+                       <input type="submit" name="submit" onclick="checkSignUpValid()" value="Submit" style="line-height: 100%;" class="btn btn-primary btn-block btn-lg"/>
+                   </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+        </div>
+    </div>
 
     <!--Link script-->
     <script src="/javascripts/main.js"></script>
@@ -221,5 +375,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="/javascripts/program.js"></script>
+    <script src="/javascripts/script.js"></script>
 </body>
 </html>

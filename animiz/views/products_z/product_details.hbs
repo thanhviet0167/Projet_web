@@ -8,7 +8,7 @@
     <!--Link css and script-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/detailed_page.css" />
    <!--<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!--Header-->
+     <!--Header-->
     <header class="fixed-top">
       <div class="container-fluid">
           <div class="row">
@@ -31,11 +31,10 @@
                      aria-expanded="false"
                      >Gender</button>
                      <div class="dropdown-menu">
-                         <a href="/search?search={{search_value}}{{link_price}}&type=male" class="dropdown-item">Male</a>
-                         <a href="/search?search={{search_value}}{{link_price}}&type=female" class="dropdown-item">Female</a>
-                         <a href="/search?search={{search_value}}{{link_price}}&type=other" class="dropdown-item">Other</a>
+                         <a href="#" class="dropdown-item">Male</a>
+                         <a href="#" class="dropdown-item">Female</a>
+                         <a href="#" class="dropdown-item">Other</a>
                      </div>
-                     
                  </div>
               </div>
               
@@ -89,10 +88,11 @@
           <div class="navbar-nav">
             <form action="/search" method="GET" class="form-inline">
               <div class="form-group">
-                <input type="text" id="search_key_name" name="search" placeholder="Searching items" class="form-control">
+                <input type="text" name="search" placeholder="Searching items" class="form-control">
                 <button type="submit" class="btn btn-default"><i class="fa fa-search p-2"></i></button>
               </div>
             </form>
+              
               <li class="btn">
                   <i class="fa fa-shopping-basket p-2"></i> 
                   Cart: <span id="cartNumbers">0</span>
@@ -101,65 +101,145 @@
         </nav>
   </div>
   </header>
+    
+    
+    <div class="content" style="margin-top:15%">
+   
+        <div class="container">
+            <h2 class="text-info">Information product</h2>
+            <div class="product-detail">
+                {{#each product}}
+                <div class="row">
+                   {{#each this}}
+                    <div class="col-md-5">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="img-zoom-container">
+                                    <img id="myimage" src="{{this.imgPath}}" class="d-block w-100" alt="First Slide" height=450 width=150>
+                                    <div id="myresult" class="img-zoom-result"></div>
+                                </div>
+                                
+                            </div>
+                            <div class="carousel-item">
+                                <div class="img-zoom-container">
+                                    <img id="myimage" src="{{this.imgPath}}" class="d-block w-100" alt="First Slide" height=450 width=150>
+                                    <div id="myresult" class="img-zoom-result"></div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="img-zoom-container">
+                                    <img id="myimage" src="{{this.imgPath}}" class="d-block w-100" alt="First Slide" height=450 width=150>
+                                    <div id="myresult" class="img-zoom-result"></div>
 
-
-    <!--End of header-->
-    <div class="gender-box text-dark" style="margin-top:10%; margin-left:14%">
-                    Sort by : 
-                  <div class="btn-group">
-                     <button class="btn border dropdown-option my-md-4 my-2 text-dark"
-                     data-toggle="dropdown"
-                     aria-haspopup="true"
-                     aria-expanded="false"
-                     >Choose your option</button>
-                     <div class="dropdown-menu">
-                         <a href="/search?search={{search_value}}{{link_type}}&sort=discount" class="dropdown-item">Price low to high</a>
-                         <a href="/search?search={{search_value}}{{link_type}}&sort=increase" class="dropdown-item">Price high to low</a>
-                         
-    </div>
-                     
-    </div>
-    </div>
-    <div class="container product-section" id="product_section" style="margin-top:5%">
-        <h2>Search Results</h2>
-        <h3>{{title}}</h3>
-        <div class="row">
-          {{# each products}}
-          <div class="col-md-3 item-2">
-            {{# each this}}
-            <div class="product-top text-center">
-              <img src="{{this.imgPath}}" width="200px" height="220px"/>
-              <div class="overlay">
-                <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <i class="fa fa-eye"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Add to Wishlist">
-                  <i class="fa fa-heart-o"></i>
-                </button>
-                <button type="button" class="btn btn-secondary" title="Add to Cart">
-                  <i class="fa fa-shopping-cart"></i>
-                </button>
-              </div>
+                                </div>
+                            </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class=""></div>
+                    <div class="product-info col-md-7">
+                        <span class="newarrival text-center">NEW ITEM</span>
+                        <h2><span id="product-name">{{this.title}}</span> </h2> <!--Product name-->
+                        <b>Product's code:</b> <span id="product-id">{{this._id}}</span> <!--Product id-->
+                        <br><b>Price: </b> <span id="product-price">USD ${{this.price}}</span>
+                        <br><b>Duration: </b><spand id="product-status">{{this.duration}}</spand>
+                        <br><b>Status: </b> <span id="product-price">50 in stock</span>
+                        <br><b>Brand:</b><span id="product-brand">{{this.brand}}</span>
+                        <br><b>Description:</b> <span id="product-description">{{this.description}}</span>
+                        <br><b>Rate:</b><span class="rating">{{this.rate}}</span><br>
+                        <div class="product-size">
+                            <label>Choose your size:</label>
+                            <select class="size-detail">
+                            <option>S - Small</option>
+                            <option>M - Medium</option>
+                            <option>L - Large</option>
+                            <option>XL - Extra large</option>
+                            </select>
+                        </div>
+                        <label>Quality </label>
+                        <input type="number" class="product-number" value="1">
+                        <p>
+                        <button type="button" class="btn btn-default homepage"><i class="fas fa-cart-plus"></i>  Other products</button>
+                        <button type="button" class="btn btn-default cart add-cart"><i class="fas fa-cart-plus"></i>  Add to the cart</button>
+                       <script src="/javascripts/script.js"></script>
+                        </p>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/each}}
             </div>
-            <div class="product-bottom text-center">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-o"></i>
-              <i class="fa fa-star-half-o"></i>
-              <h3>{{this.title}}</h3>
-              <h5>${{this.price}}</h5>
+        </div>
+        <div class="product-feature container-fluid">
+            <h2 class="best-seller">Best Seller</h2>
+            <div class="row">
+                {{#each list_product}}
+                <div class="col-md-2">
+                    {{#each this}}
+                    <div class="product-top">
+                        <img src="{{this.imgPath}}">
+                        <div class="overlay">
+                            <button type="button" class="btn btn-secondary" title="Show Detail">
+                                <i class="fa fa-eye"></i></button>
+                            <button type="button" class="btn btn-secondary" title="Add To Your Favorite List">
+                                <i class="fa fa-heart"></i></button>
+                            <button type="button" class="btn btn-secondary add-cart" title="Add To Your Cart">
+                                <i class="fa fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <h3>{{this.title}}</h3>
+                        <h5>{{this.price}}$</h5>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/each}}
             </div>
-             {{/each}}
-          </div>
-          {{/each}}
+            <h2 class="export-products">New Export Product</h2>
+            <div class="row">
+              {{#each new_product}}
+                <div class="col-md-2">
+                    {{#each this}}
+                    <div class="product-top">
+                        <img src="{{this.imgPath}}">
+                        <div class="overlay">
+                            <button type="button" class="btn btn-secondary" title="Show Detail">
+                                <i class="fa fa-eye"></i></button>
+                            <button type="button" class="btn btn-secondary" title="Add To Your Favorite List">
+                                <i class="fa fa-heart"></i></button>
+                            <button type="button" class="btn btn-secondary add-cart" title="Add To Your Cart">
+                                <i class="fa fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <h3>{{this.title}}</h3>
+                        <h5>{{this.price}}$</h5>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/each}}
+            </div>
         </div>
-         
-        </div>
-
-  <!--Footer-->
-
-    <div class="footer">
+    </div>
+        <div class="footer">
         <div class="footer-content">
             <div class="footer-section about">
                 <h1><img src="/images/img/logo.png" height=55px>ANIMIZ</h1>
@@ -203,17 +283,17 @@
             <div class="footer-section contact-form">
                 <h2>Contact us</h2>
                 <p class="description-feedback">In case of troubles, please send us your detailed feedback to help us improve our service. We will examine and reply to your feedback as soon as possible.</p>
-                <form action="./index.html" method="GET">
+                <form action="index.html" method="GET">
                     Enter your email:
                     <p>
-                    <input type="email" name="email" class="text-input contact-input form-control" placeholder="Your email address:">
+                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address:">
                     </p>
                     Feedback:
                     <p>
-                        <textarea name="message"class="text-input contact-input form-control" placeholder="Your message..."></textarea>
+                        <textarea name="message"class="text-input contact-input" placeholder="Your message..."></textarea>
                     </p>
                     <p>
-                    <button type="submit" style=" color:white; border:1px solid white;" class="btn btn-big btn-primary" onclick="return Send_mess()">
+                    <button type="submit" style=" color:white; border:1px solid white;" class="btn btn-big btn-primary">
                         <i class="fas fa-envelope"></i>
                         Send
                     </button>
@@ -226,67 +306,68 @@
         </div>
     </div>
     <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-          </div>
-          <style>
-              .login-form{
-                  text-align: center;
-                  font-family: 'Bitter', serif;
-                  color: #00778b !important;
-              }
-              .login-button{
-                  background-color:#00778b ;
-                  color: white;
-              }
-              .login-button:hover{
-                  background-color:#009fbb ;
-                  color: white;
-              }
-              .login-container.form-group
-              {
-                  border: 3px solid #00778b !important;
-              }
-          </style>
-          <div class="modal-body">
-              <div class="login-container">
-                  <form class="login-form" action="/user/search" method="GET">
-                      <h1>Login</h1>
-                      <h6>Fill your account into this form to login</h6>
-                      <hr>
-                      <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Username" />
-                      </div>
-                      <br>
-                      <div class="form-group">
-                          <input type="password" class="form-control" placeholder="Password" />
-                      </div>
-                      <br>
-                      <div class="forgot-link">
-                          <div class="form">
-                              <input type="checkbox" name="remember" value="">
-                              <label for="remember">Remember your account</label>
-                          </div>
-                          <p>
-                              <a href="#">Forgot Password?</a>
-                          </p>
-                      </div>
-                      <button type="submit" class="btn mt-5 btn-custom btn-primary btn-block rounded-pill btn-lg login-button">Login</button>
-                      <p class="mt-3 font-weight-normal">Don't have an account <a href="#"><strong class="text-primary">Register now</strong></a></p>
-                  </form>
-              </div>
-          </div>
-          <div class="modal-footer">
-          </div>
-      </div>
-      </div>
-  </div>
-  <div class="modal fade" id="sign-up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <style>
+                .login-form{
+                    text-align: center;
+                    font-family: 'Bitter', serif;
+                    color: #00778b !important;
+                }
+                .login-button{
+                    background-color:#00778b ;
+                    color: white;
+                }
+                .login-button:hover{
+                    background-color:#009fbb ;
+                    color: white;
+                }
+                .login-container.form-group
+                {
+                    border: 3px solid #00778b !important;
+                }
+            </style>
+            <div class="modal-body">
+                <div class="login-container">
+                    <form class="login-form" onclick="checkLoginValid()">
+                        <h1>Login</h1>
+                        <h6>Fill your account into this form to login</h6>
+                        <hr>
+                        <div class="form-group">
+                            <input type="text" id="userNameLogin" class="form-control" placeholder="Username" value=""/>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="password" id="passwordLogin" class="form-control" placeholder="Password" value="" />
+                        </div><br>
+                        <span id="alertLogin" style="color:red; font-size: 15px; text-indent: 1%;"></span>
+                        <br>
+                        <div class="forgot-link">
+                            <div class="form">
+                                <input type="checkbox" name="remember" value="">
+                                <label for="remember">Remember your account</label>
+                            </div>
+                            <p>
+                                <a href="#">Forgot Password?</a>
+                            </p>
+                        </div>
+                        <button onclick="checkLoginValid()" type="submit" class="btn mt-5 btn-custom btn-primary btn-block rounded-pill btn-lg login-button">Login</button>
+                        <p class="mt-3 font-weight-normal">Don't have an account <a href="#"><strong class="text-primary">Register now</strong></a></p>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="modal fade" id="sign-up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -364,8 +445,6 @@
         </div>
         </div>
     </div>
-
-    <!--Link script-->
     <script src="/javascripts/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -373,5 +452,6 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="/javascripts/program.js"></script>
     <script src="/javascripts/script.js"></script>
+   
 </body>
 </html>
