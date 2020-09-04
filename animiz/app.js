@@ -11,6 +11,17 @@ var app = express();
 
 var expressHbs = require('express-handlebars');
 
+var session = require('express-session');
+var expressValidator = require('express-validator');
+var expressSession = require('express-session');
+
+app.set('trust proxy', 1) // trust first proxy
+//app.use(expressValidator());
+app.use(expressSession({
+  secret: 'max',
+  saveUninitialized: false,
+  resave: false
+}));
 //var mongodb = require('mongoose');
 /*
 var MongoClient = require('mongodb').MongoClient, format = require('util').format;
@@ -28,6 +39,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017', function(err, db){
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+app.use(express.urlencoded({extended: false }));
 //app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname:'.hbs'}));
 //app.set('view engine', 'hbs');
 
@@ -44,6 +56,12 @@ app.use('/users', usersRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+app.use(function(req, res, next){
+  res.locals.session = req.session;
+  next();
+});
+
 
 // error handler
 app.use(function(err, req, res, next) {

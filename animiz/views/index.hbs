@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{title}}</title>
 
     <!--Link css and script-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
@@ -44,7 +44,7 @@
               </div>
               <div class="col-md-4 col-12 text-right">
                   <p class="my-md-4 header-links">
-                      <button type="button" class="btn btn-primary px-2" data-toggle="modal" data-target="#login">
+                      <button type="button"  class="btn btn-primary px-2" data-toggle="modal" data-target="#login">
                         Login
                       </button>
                       <button type="button" class="btn btn-primary px-2" data-toggle="modal" data-target="#sign-up">
@@ -94,8 +94,11 @@
             </form>
               
               <li class="btn">
-                  <i class="fa fa-shopping-basket p-2"></i> 
-                  Cart: <span id="cartNumbers">0</span>
+                  <a href="/shopping-cart" style="text-decoration:none">
+                      <i class="fa fa-shopping-basket p-2"></i> 
+                        Cart : <span class="badge">{{session.cart.totalQty}}</span>
+                  </a>
+                  
               </li>
           </div>
         </nav>
@@ -134,7 +137,7 @@
                   <div class="col-md-2 product pt-md-5 pt-4">
                       {{# each this}}
                       <img src="{{this.imgPath}}" alt="{{this.title}}" />
-                      <a href="/product?id={{this._id}}" style="text-decoration:none"><span class="border site-btn btn-span">{{this.title}}</span></a>
+                      <a href="/product/{{this._id}}" style="text-decoration:none"><span class="border site-btn btn-span">{{this.title}}</span></a>
                       {{/each}}
                   </div>
                   {{/each}}          
@@ -235,213 +238,33 @@
             </div>
             <!--End of section title-->
 
-
+            
             <!--Products iteam col-1-->
             <div class="row product-items" id="products-items">
+                {{#each features_products}}
+                {{#each this}}
                 <!--Single iteam-->
                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <a href="/product/{{this._id}}" style="text-decoration:none">
                     <div class="card single-item">
                         <div class="img-container">
-                            <img src="/images/img/img_product/f_clothes_1.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
+                            <img src="{{this.imgPath}}" alt="{{this.title}}" class="card-img-top product-img" width="300" height="200"/>
                         </div>
                         <div class="card-body">
                             <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="item-name">3D Short Kimetsu no yaiba</h5>
-                                <span><i class="fas fa-dollar-sign"></i>5.99</span>
+                                <h5 id="item-name" class="text-dark">{{this.title}}</h5>
+                                <span class="text-dark"><i class="fas fa-dollar-sign text-dark"></i>{{this.price}}</span>
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <!--End of single iteam-->
-                 <!--Single iteam-->
-                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                    <div class="card single-item">
-                        <div class="img-container">
-                            <img src="/images/img/img_product/f_clothes_2.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="item-name">Boku no hero academi pan</h5>
-                                <span><i class="fas fa-dollar-sign"></i>3.55</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End of single iteam-->
-                 <!--Single iteam-->
-                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                    <div class="card single-item">
-                        <div class="img-container">
-                            <img src="/images/img/img_product/f_clothes_3.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="item-name">Gaya Kasual Untuk Unisex</h5>
-                                <span><i class="fas fa-dollar-sign"></i>6.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End of single iteam-->
+                {{/each}}
+                {{/each}}
             </div>
-            <!--End of products iteam-->
-
-
-             <!--Products iteam col-2-->
-             <div class="row product-items" id="products-items">
-                <!--Single iteam-->
-                <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                    <div class="card single-item">
-                        <div class="img-container">
-                            <img src="/images/img/img_product/f_clothes_4.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="item-name">Phone case anime SAO</h5>
-                                <span><i class="fas fa-dollar-sign"></i>2.33</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End of single iteam-->
-                 <!--Single iteam-->
-                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                    <div class="card single-item">
-                        <div class="img-container">
-                            <img src="/images/img/img_product/f_clothes_5.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="item-name">Phone case Date A Live</h5>
-                                <span><i class="fas fa-dollar-sign"></i>1.22</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End of single iteam-->
-                 <!--Single iteam-->
-                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                    <div class="card single-item">
-                        <div class="img-container">
-                            <img src="/images/img/img_product/f_clothes_6.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="item-name">Phone case Sasuke</h5>
-                                <span><i class="fas fa-dollar-sign"></i>3.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End of single iteam-->
-            </div>
-            <!--End of products iteam-->
-
-
-
-             <!--Products iteam col-3-->
-             <div class="row product-items" id="products-items">
-                <!--Single iteam-->
-                <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                    <div class="card single-item">
-                        <div class="img-container">
-                            <img src="/images/img/img_product/f_clothes_7.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="item-name">Phone case One piece</h5>
-                                <span><i class="fas fa-dollar-sign"></i>4.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End of single iteam-->
-                 <!--Single iteam-->
-                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                    <div class="card single-item">
-                        <div class="img-container">
-                            <img src="/images/img/img_product/f_clothes_8.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="item-name">Keychain anime</h5>
-                                <span><i class="fas fa-dollar-sign"></i>1.02</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End of single iteam-->
-                 <!--Single iteam-->
-                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                    <div class="card single-item">
-                        <div class="img-container">
-                            <img src="/images/img/img_product/anime_1.png" alt="" class="card-img-top product-img" width="300" height="200"/>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="item-name">T-shirt 3d Rem</h5>
-                                <span><i class="fas fa-dollar-sign"></i>7.78</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End of single iteam-->
-            </div>
-            <!--End of products iteam-->
-
-
-             <!--Products iteam col-4-->
-             <div class="row product-items" id="products-items">
-                <!--Single iteam-->
-                <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                    <div class="card single-item">
-                        <div class="img-container">
-                            <img src="/images/img/img_product/anime_2.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="item-name">T-shirt 3d Tokisaki</h5>
-                                <span><i class="fas fa-dollar-sign"></i>8.22</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End of single iteam-->
-                 <!--Single iteam-->
-                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                    <div class="card single-item">
-                        <div class="img-container">
-                            <img src="/images/img/img_product/anime_3.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="item-name">T-shirt 3d One piece</h5>
-                                <span><i class="fas fa-dollar-sign"></i>14.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End of single iteam-->
-                 <!--Single iteam-->
-                 <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
-                    <div class="card single-item">
-                        <div class="img-container">
-                            <img src="/images/img/img_product/anime_4.jpg" alt="" class="card-img-top product-img" width="300" height="200"/>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="item-name">T-shirt 3d Takagi</h5>
-                                <span><i class="fas fa-dollar-sign"></i>9.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--End of single iteam-->
-            </div>
-            <!--End of products iteam-->
-
-        
-        </div>
+          
+         </div>
     </section> 
 
     <!--Product Section-->
@@ -456,13 +279,13 @@
               <img src="{{this.imgPath}}" width="200px" height="220px"/>
               <div class="overlay">
                 <button type="button" class="btn btn-secondary" title="Quick Shop">
-                  <a href="/product?id={{this._id}}"><i class="fa fa-eye"></i></a>
+                  <a href="/product/{{this._id}}"><i class="fa fa-eye"></i></a>
                 </button>
                 <button type="button" class="btn btn-secondary" title="Add to Wishlist">
                   <i class="fa fa-heart-o"></i>
                 </button>
                 <button type="button" class="btn btn-secondary" title="Add to Cart">
-                  <i class="fa fa-shopping-cart"></i>
+                  <a href="/add-to-cart?id={{this._id}}&sl=1"><i class="fa fa-shopping-cart"></i></a>
                 </button>
               </div>
             </div>
@@ -548,14 +371,14 @@
             <div class="footer-section contact-form">
                 <h2>Contact us</h2>
                 <p class="description-feedback">In case of troubles, please send us your detailed feedback to help us improve our service. We will examine and reply to your feedback as soon as possible.</p>
-                <form action="./index.html" method="GET">
+                <form action="/" method="POST">
                     Enter your email:
                     <p>
-                    <input type="email" name="email" class="text-input contact-input form-control" placeholder="Your email address:">
+                    <input type="email" name="email_user" class="text-input contact-input form-control" placeholder="Your email address:">
                     </p>
                     Feedback:
                     <p>
-                        <textarea name="message"class="text-input contact-input form-control" placeholder="Your message..."></textarea>
+                        <textarea name="message_user"class="text-input contact-input form-control" placeholder="Your message..."></textarea>
                     </p>
                     <p>
                     <button type="submit" style=" color:white; border:1px solid white;" class="btn btn-big btn-primary" onclick="return Send_mess()">
@@ -622,7 +445,7 @@
                           </p>
                       </div>
                       <button type="submit" class="btn mt-5 btn-custom btn-primary btn-block rounded-pill btn-lg login-button">Login</button>
-                      <p class="mt-3 font-weight-normal">Don't have an account <a href="#"><strong class="text-primary">Register now</strong></a></p>
+                      <p class="mt-3 font-weight-normal">Don't have an account <a href="#"><strong class="text-primary" data-toggle="modal" data-target="#sign-up">Register now</strong></a></p>
                   </form>
               </div>
           </div>
@@ -666,7 +489,7 @@
                 <div class="sign-up" onclick="checkSignUpValid()">
                     <h1 class="text-center">Registration form</h1>
                     <hr>
-                    <form class="form-group text-center">
+                    <form class="form-group text-center" method="POST" action="/">
                        <!--First and last name-->
                         <div class="row">
                             <div class="col-lg-12">

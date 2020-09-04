@@ -1,10 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-/*
-var mongo = require('mongodb');
-var CtrMongoClient = mongo.MongoClient;
-var db = mongo.Db;*/
 
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
@@ -21,7 +17,8 @@ router.get('/', function(req, res, next){
     var size_products = 15;
 //      console.log(result);
       var productChuck = [];
-      var top_product = []
+      var top_product = [];
+      var list_features = []
       for(var i = 0; i < result.length; i++)
       {
         if(i <= size_products)
@@ -32,15 +29,28 @@ router.get('/', function(req, res, next){
         {
           top_product.push(result.slice(i,i+1));
         }
+        if(result[i].type_product == "feature_product")
+        {
+          list_features.push(result.slice(i,i+1));
+        }
+
       }
-      console.log(top_product)
-      res.render('index', { title: 'Animiz', products: productChuck, top_product: top_product});
+      res.render('index', { title: 'Animiz', products: productChuck, top_product: top_product, 
+      features_products:list_features, session: req.session});
       db.close();
     });
   });
 
   
 });
+
+
+router.post('/', function(req, res, next){
+  var email_user = req.body.email_user;
+  var message_user = req.body.message_user;
+
+  res.redirect('/');
+})
 
 
 /* GET Account */
@@ -62,140 +72,75 @@ router.get('/user/change_pw', function(req, res, next){
   res.render('users/change_pw', {title: 'Change the password profile'});
 })
 
-// Get Product Details Page
 
-router.get('/product', function(req, res, next){
 
-  var product_id = req.query.id;
-  MongoClient.connect(url,{useUnifiedTopology: true} ,function(err, db) {
-    if (err) throw err;
-    var dbo = db.db("Information_Product");
-    dbo.collection("List_product").find({}).toArray(function(err, result) {
-    if (err) throw err;
-   
-    var product = [];
-    var list_product = [];
-    var size_list = 0;
-    var new_product = [];
-      for(var i = 0; i < result.length; i++)
-      {
-        if(result[i]._id == product_id)
-        {
-          product.push(result.slice(i,i+1));
-        }
-        if(i < 6)
-        {
-          new_product.push(result.slice(i,i+1));
-        }
-        if(result[i].type_product == "top_product" && size_list < 6)
-        {
-          list_product.push(result.slice(i,i+1));
-          size_list++;
-        }
-      }
-      temp = product[0];
-      res.render('products_z/product_details', { title: 'Product Details', 
-      product:product, new_product: new_product, list_product: list_product});
-      db.close();
-    });
-  });
-});
+
+
 
 // Get Result Search Page
 
+const CtrlProduct = require('../controllers/product');
+const session = require('express-session');
 
+router.get('/search', CtrlProduct.search);
 
-router.get('/search', function(req, res, next){
-  const queryParams = req.query;
-  const key_search = req.query.search;
-  var search_value = req.query.search;
+// Get Product Details Page
 
+router.get('/product/:id', CtrlProduct.Details);
 
-  var url_price = req.query.sort;
-  var link_price;
-  
-  if(url_price != undefined)
-  {
-    link_price = "&sort="+url_price;
-  }
+// Shopping Cart
 
-  var url_type = req.query.type;
-  var link_type;
-  
-  if(url_type != undefined)
-  {
-    link_type = "&type="+url_type;
-  }
-  
- 
-  if(key_search != "")
-  {
+router.get('/add-to-cart', CtrlProduct.add_to_cart);
+router.get('/Buy_Product', CtrlProduct.Buy_Product);
+router.get('/Remove_One', CtrlProduct.Reduce_One);
 
+var Cart = require('../controllers/cart');
+router.get('/shopping-cart', function(req, res, next){
   MongoClient.connect(url,{useUnifiedTopology: true} ,function(err, db) {
-  if (err) throw err;
-  var dbo = db.db("Information_Product");
-  var sort_by;
-  if(url_price == "discount")
-  {
-    sort_by = {price: 1};
-  }
-  else{
-    if(url_price == "increase")
-    {
-      sort_by = {price: -1};
-    }
-  }
-
-  dbo.collection("List_product").find({}).sort(sort_by).toArray(function(err, result) {
-      if (err) throw err;
-      var productChuck = [];
-      var keysearch = key_search.toLowerCase();
-      var k_search = keysearch.toLowerCase();
-      var check = false;
+    if (err) throw err;
+    var dbo = db.db("Information_Product");
+  
+    dbo.collection("List_product").find({}).toArray(function(err, result) {
+    if (err) throw err;
+    
+    var list_product = [];
+    var size_list = 0;
+    var new_product = [];
+    var size_new = 0;
       for(var i = 0; i < result.length; i++)
       {
-        let name_key = result[i].title.toLowerCase();
-        if(name_key.includes(k_search))
-        {
-          if(url_type == undefined)
-          {
-            productChuck.push(result.slice(i,i+1));
-            check = true;
-          }
-          else{
-            if(url_type == result[i].type)
+       
+          if(size_new < 6)
             {
-              productChuck.push(result.slice(i,i+1));
-            check = true;
+                new_product.push(result.slice(i,i+1));
+                size_new++;
             }
-          }
-        }
+            if(result[i].type_product == "top_product" && size_list < 6)
+            {
+                list_product.push(result.slice(i,i+1));
+                size_list++;
+            }
         
       }
+      
      
-      console.log(productChuck);
-      if(check == false)
-      {
-        res.render('products_z/result_search', { title: 'There is no matching search value'
-        , products: productChuck, search_value: search_value, link_price:link_price, link_type:link_type,
-          url_price:url_price, url_type, url_type});
+      if(!req.session.cart){
+        return  res.render('products_z/shopping_cart', { title: "Shopping Cart", 
+        products:null, totalPrice: 0,
+        new_product: new_product, list_product: list_product, session: req.session});
+        db.close();
       }
-      else
-      {
-        res.render('products_z/result_search', { title: '', products: productChuck, 
-        search_value: search_value, link_price:link_price, link_type:link_type, url_price:url_price, url_type, url_type});
-      }
-        
-
+      var cart = new Cart(req.session.cart);
+      res.render('products_z/shopping_cart', { title: "Shopping Cart", 
+      products:cart.generateArray(), totalPrice: cart.totalPrice,
+      new_product: new_product, list_product: list_product, session: req.session});
       db.close();
     });
-  }); 
-  }
-  else{
-    res.render('index', { title: 'Animiz'});
-  }
-//  res.render('products_z/result_search', {title: 'Search Result'});
+  });
 })
+
+
+
 
 router.get('/user/search', function(req, res, next){
   /*
@@ -290,6 +235,29 @@ router.get('/user/search', function(req, res, next){
 //  res.render('products_z/result_search', {title: 'Search Result'});
  res.render('index_account', { title: 'Animiz'});
 })
+
+
+// Login and Sign up
+
+router.get('/login', function(req, res, next){
+  res.render('users/login', {title: 'Login Form'});
+})
+
+
+router.get('/sign-up', function(req, res, next){
+  res.render('users/sign-up', {title: 'Sign up'});
+})
+
+
+
+/*
+router.get("/logout", function (req, res) { 
+  req.logout(); 
+  res.redirect("/"); 
+});*/
+
+
+
 
 //router.use(express.static('views'));
 
