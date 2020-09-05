@@ -122,7 +122,7 @@ var add_to_cart = (req,res, next) => {
 }
 
 var Buy_Product = (req, res, next) => {
-    req.session.cart = null;
+    req.session.cart = {};
     res.redirect('/');
 }
 
@@ -133,6 +133,52 @@ var Reduce_One = (req, res, next) => {
     req.session.cart = cart;
     res.redirect('/shopping-cart');
 }
+
+var shopping_cart = (req, res, next) => {
+    MongoClient.connect(url,{useUnifiedTopology: true} ,function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("Information_Product");
+      
+        dbo.collection("List_product").find({}).toArray(function(err, result) {
+        if (err) throw err;
+        
+        var list_product = [];
+        var size_list = 0;
+        var new_product = [];
+        var size_new = 0;
+          for(var i = 0; i < result.length; i++)
+          {
+           
+              if(size_new < 6)
+                {
+                    new_product.push(result.slice(i,i+1));
+                    size_new++;
+                }
+                if(result[i].type_product == "top_product" && size_list < 6)
+                {
+                    list_product.push(result.slice(i,i+1));
+                    size_list++;
+                }
+            
+          }
+          
+         
+          if(!req.session.cart){
+            return  res.render('products_z/shopping_cart', { title: "Shopping Cart", 
+            products:null, totalPrice: 0,
+            new_product: new_product, list_product: list_product, session: req.session});
+            db.close();
+          }
+          var cart = new Cart(req.session.cart);
+          res.render('products_z/shopping_cart', { title: "Shopping Cart", 
+          products:cart.generateArray(), totalPrice: cart.totalPrice,
+          new_product: new_product, list_product: list_product, session: req.session});
+          db.close();
+        });
+      });
+}
+
+
 
 const Details = (req, res, next) => {
     var product_id = req.params.id;
@@ -182,4 +228,4 @@ const Details = (req, res, next) => {
 
 
 
-module.exports = {search, Details, add_to_cart, Buy_Product, Reduce_One}
+module.exports = {search, Details, add_to_cart, Buy_Product, Reduce_One, shopping_cart}

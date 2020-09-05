@@ -45,13 +45,21 @@
               </div>
               <div class="col-md-4 col-12 text-right">
                   <p class="my-md-4 header-links">
-                      <button type="button" class="btn btn-primary px-2" data-toggle="modal" data-target="#login">
+                      <button type="button"  class="btn btn-primary px-2" onclick="login()">
                         Login
                       </button>
-                      <button type="button" class="btn btn-primary px-2" data-toggle="modal" data-target="#sign-up">
+                      <button type="button" class="btn btn-primary px-2" onclick="sign_up()">
                         Sign Up
                       </button>
                   </p>
+                  <script>
+                      function login(){
+                          window.location = '/login';
+                      }
+                      function sign_up(){
+                          window.location = '/sign-up';
+                      }
+                  </script>
               </div>
               
           </div>
@@ -204,14 +212,14 @@
             <div class="footer-section contact-form">
                 <h2>Contact us</h2>
                 <p class="description-feedback">In case of troubles, please send us your detailed feedback to help us improve our service. We will examine and reply to your feedback as soon as possible.</p>
-                <form action="./index.html" method="GET">
+                <form method="POST">
                     Enter your email:
                     <p>
-                    <input type="email" name="email" class="text-input contact-input form-control" placeholder="Your email address:">
+                    <input type="email" name="email_user" class="text-input contact-input form-control" placeholder="Your email address:">
                     </p>
                     Feedback:
                     <p>
-                        <textarea name="message"class="text-input contact-input form-control" placeholder="Your message..."></textarea>
+                        <textarea name="message_user"class="text-input contact-input form-control" placeholder="Your message..."></textarea>
                     </p>
                     <p>
                     <button type="submit" style=" color:white; border:1px solid white;" class="btn btn-big btn-primary" onclick="return Send_mess()">

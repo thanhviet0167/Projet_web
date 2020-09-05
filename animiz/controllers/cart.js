@@ -1,3 +1,5 @@
+const { Double } = require("mongodb");
+
 module.exports = function Cart(oldCard){
     this.items = oldCard.items || {};
     this.totalQty = oldCard.totalQty || 0;
@@ -10,8 +12,8 @@ module.exports = function Cart(oldCard){
         storedItem.qty+=sl;
         storedItem.price = storedItem.item.price * storedItem.qty;
     //  storedItem.price = storedItem.item.price;
-        this.totalQty+=sl;
-        this.totalPrice += storedItem.item.price*sl;
+        this.totalQty+=sl; 
+        this.totalPrice += storedItem.item.price*Double(sl);
     };
     this.reduce_One = function(id){
         this.items[id].qty--;

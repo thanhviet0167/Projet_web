@@ -12,7 +12,7 @@ var app = express();
 var expressHbs = require('express-handlebars');
 
 var session = require('express-session');
-var expressValidator = require('express-validator');
+//var expressValidator = require('express-validator');
 var expressSession = require('express-session');
 
 app.set('trust proxy', 1) // trust first proxy

@@ -32,13 +32,21 @@
               </div>
               <div class="col-md-4 col-12 text-right">
                   <p class="my-md-4 header-links">
-                      <button type="button"  class="btn btn-primary px-2" data-toggle="modal" data-target="#login">
+                      <button type="button"  class="btn btn-primary px-2" onclick="login()">
                         Login
                       </button>
-                      <button type="button" class="btn btn-primary px-2" data-toggle="modal" data-target="#sign-up">
+                      <button type="button" class="btn btn-primary px-2" onclick="sign_up()">
                         Sign Up
                       </button>
                   </p>
+                  <script>
+                      function login(){
+                          window.location = '/login';
+                      }
+                      function sign_up(){
+                          window.location = '/sign-up';
+                      }
+                  </script>
               </div>
               
           </div>
@@ -71,16 +79,17 @@
           </style>
          
               <div class="login-container">
-                  <form class="login-form" action="/user" method="GET">
+                  <form class="login-form" method="POST">
                       <h1>Login</h1>
                       <h6>Fill your account into this form to login</h6>
                       <hr>
                       <div class="form-group">
-                          <input type="text" class="form-control" name="username" placeholder="Username" />
+                          <input type="text" class="form-control" name="l_username" placeholder="Username" />
                       </div>
                       <br>
                       <div class="form-group">
-                          <input type="password" class="form-control" name="password" placeholder="Password" />
+                          <input type="password" class="form-control" name="l_password" placeholder="Password" />
+                          <p id="text_box">{{default}}</p>
                       </div>
                       <br>
                       <div class="forgot-link">
@@ -93,7 +102,7 @@
                           </p>
                       </div>
                       <button type="submit" class="btn mt-5 btn-custom btn-primary btn-block rounded-pill btn-lg login-button">Login</button>
-                      <p class="mt-3 font-weight-normal">Don't have an account <a href="#"><strong class="text-primary" data-toggle="modal" data-target="#sign-up">Register now</strong></a></p>
+                      <p class="mt-3 font-weight-normal">Don't have an account <a href="/sign-up"><strong class="text-primary" data-toggle="modal" data-target="#sign-up">Register now</strong></a></p>
                   </form>
               </div>
           

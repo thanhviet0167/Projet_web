@@ -1,9 +1,12 @@
+
 var express = require('express');
 var router = express.Router();
 
 
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
+
+const bcrypt = require('bcrypt');
 
 /* GET home page. */
 router.get('/', function(req, res, next){
@@ -44,13 +47,16 @@ router.get('/', function(req, res, next){
   
 });
 
+const Ctrl_Feedback = require('../controllers/feed_back');
+router.post('/', Ctrl_Feedback.get_feedback);
 
-router.post('/', function(req, res, next){
+
+/*router.post('/', function(req, res, next){
   var email_user = req.body.email_user;
   var message_user = req.body.message_user;
 
   res.redirect('/');
-})
+})*/
 
 
 /* GET Account */
@@ -83,10 +89,12 @@ const CtrlProduct = require('../controllers/product');
 const session = require('express-session');
 
 router.get('/search', CtrlProduct.search);
+router.post('/search',Ctrl_Feedback.get_feedback);
 
 // Get Product Details Page
 
 router.get('/product/:id', CtrlProduct.Details);
+router.post('/product/:id', Ctrl_Feedback.get_feedback);
 
 // Shopping Cart
 
@@ -95,50 +103,9 @@ router.get('/Buy_Product', CtrlProduct.Buy_Product);
 router.get('/Remove_One', CtrlProduct.Reduce_One);
 
 var Cart = require('../controllers/cart');
-router.get('/shopping-cart', function(req, res, next){
-  MongoClient.connect(url,{useUnifiedTopology: true} ,function(err, db) {
-    if (err) throw err;
-    var dbo = db.db("Information_Product");
-  
-    dbo.collection("List_product").find({}).toArray(function(err, result) {
-    if (err) throw err;
-    
-    var list_product = [];
-    var size_list = 0;
-    var new_product = [];
-    var size_new = 0;
-      for(var i = 0; i < result.length; i++)
-      {
-       
-          if(size_new < 6)
-            {
-                new_product.push(result.slice(i,i+1));
-                size_new++;
-            }
-            if(result[i].type_product == "top_product" && size_list < 6)
-            {
-                list_product.push(result.slice(i,i+1));
-                size_list++;
-            }
-        
-      }
-      
-     
-      if(!req.session.cart){
-        return  res.render('products_z/shopping_cart', { title: "Shopping Cart", 
-        products:null, totalPrice: 0,
-        new_product: new_product, list_product: list_product, session: req.session});
-        db.close();
-      }
-      var cart = new Cart(req.session.cart);
-      res.render('products_z/shopping_cart', { title: "Shopping Cart", 
-      products:cart.generateArray(), totalPrice: cart.totalPrice,
-      new_product: new_product, list_product: list_product, session: req.session});
-      db.close();
-    });
-  });
-})
+router.get('/shopping-cart', CtrlProduct.shopping_cart);
 
+router.post('/shopping-cart', Ctrl_Feedback.get_feedback);
 
 
 
@@ -236,18 +203,23 @@ router.get('/user/search', function(req, res, next){
  res.render('index_account', { title: 'Animiz'});
 })
 
+router.post('/user/search', Ctrl_Feedback.get_feedback);
 
 // Login and Sign up
 
+
+var Ctr_User = require('../controllers/account_user');
+
 router.get('/login', function(req, res, next){
   res.render('users/login', {title: 'Login Form'});
-})
-
+});
+router.post('/login', Ctr_User.login);
 
 router.get('/sign-up', function(req, res, next){
   res.render('users/sign-up', {title: 'Sign up'});
-})
+});
 
+router.post('/sign-up', Ctr_User.register);
 
 
 /*
