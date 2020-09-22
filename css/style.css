@@ -385,7 +385,7 @@ nav
 }
 
 .product-section h2{
-    background: #0062cc;
+    background: #a300cc;
     color: #fff;
     width: 272.7px;
     font-size: 24px;
@@ -393,16 +393,6 @@ nav
     height: 40px;
     margin-left: 15px;
     font-family: var(--gugi);
-}
-
-.product-section h2::after{
-    content: '';
-    border-top: 40px solid #0062cc;
-    border-right: 40px solid transparent;
-    position: relative;
-    left: 30px;
-    top: 33px;
-    
 }
 
 .product-section .row{
@@ -437,7 +427,7 @@ nav
     display: block;
     opacity: 0;
     position: absolute;
-    top: 10%;
+    top: 5%;
     margin-left: 0;
     width: 70px;
 }
@@ -450,13 +440,13 @@ nav
 
 .product-section .overlay .fa{
     cursor: pointer;
-    background-color: #555;
-    color: #000;
-    height: 35px;
-    width: 35px;
+    background-color: #c090ff;
+    color: white;
+    border-radius: 10px;
+    height: 33px;
+    width: 33px;
     font-size: 20px;
-    padding: 7px;
-    margin: 5%;
+    padding: 6px;
     margin-bottom: 5%;
 }
 
