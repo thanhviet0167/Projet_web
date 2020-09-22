@@ -1,8 +1,10 @@
 const { ObjectId } = require('mongodb');
 
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
+var url = "mongodb+srv://animiz:animiz@cluster0.yfhgm.mongodb.net";
 var express = require('express');
+
+// mongodb+srv://animiz:animiz@cluster0.yfhgm.mongodb.net/test
 
 //Function Searc
 
@@ -34,7 +36,7 @@ const search = (req, res, next) => {
 
     MongoClient.connect(url,{useUnifiedTopology: true} ,function(err, db) {
     if (err) throw err;
-    var dbo = db.db("Information_Product");
+    var dbo = db.db("Product");
     var sort_by;
     if(url_price == "discount")
     {
@@ -47,7 +49,7 @@ const search = (req, res, next) => {
         }
     }
 
-    dbo.collection("List_product").find({}).sort(sort_by).toArray(function(err, result) {
+    dbo.collection("List_Product").find({}).sort(sort_by).toArray(function(err, result) {
         if (err) throw err;
         var productChuck = [];
         var keysearch = key_search.toLowerCase();
@@ -105,11 +107,11 @@ var add_to_cart = (req,res, next) => {
     var product_number = Number(req.query.sl);    
     MongoClient.connect(url,{useUnifiedTopology: true} ,function(err, db) {
     if (err) throw err;
-    var dbo = db.db("Information_Product");
+    var dbo = db.db("Product");
   
     
     var cart = new Cart(req.session.cart ? req.session.cart: {});
-    dbo.collection("List_product").find({_id: ObjectId(product_id)}).toArray(function(err, result) {
+    dbo.collection("List_Product").find({_id: ObjectId(product_id)}).toArray(function(err, result) {
         if(err){
             return res.redirect('/');
         }
@@ -137,9 +139,9 @@ var Reduce_One = (req, res, next) => {
 var shopping_cart = (req, res, next) => {
     MongoClient.connect(url,{useUnifiedTopology: true} ,function(err, db) {
         if (err) throw err;
-        var dbo = db.db("Information_Product");
+        var dbo = db.db("Product");
       
-        dbo.collection("List_product").find({}).toArray(function(err, result) {
+        dbo.collection("List_Product").find({}).toArray(function(err, result) {
         if (err) throw err;
         
         var list_product = [];
@@ -184,19 +186,19 @@ const Details = (req, res, next) => {
     var product_id = req.params.id;
     MongoClient.connect(url,{useUnifiedTopology: true} ,function(err, db) {
     if (err) throw err;
-    var dbo = db.db("Information_Product");
+    var dbo = db.db("Product");
     var product = [];
-    dbo.collection("List_product").find({_id: ObjectId(product_id)}).toArray(function(err, result) {
+    dbo.collection("List_Product").find({_id: ObjectId(product_id)}).toArray(function(err, result) {
 
         
         for(var i = 0; i < result.length; i++)
         {
             product.push(result.slice(i,i+1));
         }
-        db.close();
+
     });
 
-    dbo.collection("List_product").find({}).toArray(function(err, result) {
+    dbo.collection("List_Product").find({}).toArray(function(err, result) {
     if (err) throw err;
     var list_product = [];
     var size_list = 0;

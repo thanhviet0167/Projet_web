@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/admin', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://animiz:animiz@cluster0.yfhgm.mongodb.net/Manage', {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connection.on('error', () => {
     console.log("There is an error");
 });

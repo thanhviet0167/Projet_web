@@ -1,10 +1,13 @@
-
 var express = require('express');
 var router = express.Router();
 
+// update npm
+// npm install -g npm-check-updates
+// ncu -u
+// npm install
 
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
+var url = "mongodb+srv://animiz:animiz@cluster0.yfhgm.mongodb.net";
 
 const bcrypt = require('bcrypt');
 
@@ -14,8 +17,8 @@ router.get('/', function(req, res, next){
   var products = [];
   MongoClient.connect(url,{useUnifiedTopology: true} ,function(err, db) {
     if (err) throw err;
-    var dbo = db.db("Information_Product");
-    dbo.collection("List_product").find({}).toArray(function(err, result) {
+    var dbo = db.db("Product");
+    dbo.collection("List_Product").find({}).toArray(function(err, result) {
     if (err) throw err;
     var size_products = 15;
 //      console.log(result);
@@ -110,96 +113,7 @@ router.post('/shopping-cart', Ctrl_Feedback.get_feedback);
 
 
 router.get('/user/search', function(req, res, next){
-  /*
-  const queryParams = req.query;
-  const key_search = req.query.search;
-  var search_value = req.query.search;
-
-
-  var url_price = req.query.sort;
-  var link_price;
-  
-  if(url_price != undefined)
-  {
-    link_price = "&sort="+url_price;
-  }
-
-  var url_type = req.query.type;
-  var link_type;
-  
-  if(url_type != undefined)
-  {
-    link_type = "&type="+url_type;
-  }
-  
- 
-  if(key_search != "")
-  {
-
-  MongoClient.connect(url,{useUnifiedTopology: true} ,function(err, db) {
-  if (err) throw err;
-  var dbo = db.db("Information_Product");
-  var sort_by;
-  if(url_price == "discount")
-  {
-    sort_by = {price: 1};
-  }
-  else{
-    if(url_price == "increase")
-    {
-      sort_by = {price: -1};
-    }
-  }
-
-  dbo.collection("List_product").find({}).sort(sort_by).toArray(function(err, result) {
-      if (err) throw err;
-      var productChuck = [];
-      var keysearch = key_search.toLowerCase();
-      var k_search = keysearch.toLowerCase();
-      var check = false;
-      for(var i = 0; i < result.length; i++)
-      {
-        let name_key = result[i].title.toLowerCase();
-        if(name_key.includes(k_search))
-        {
-          if(url_type == undefined)
-          {
-            productChuck.push(result.slice(i,i+1));
-            check = true;
-          }
-          else{
-            if(url_type == result[i].type)
-            {
-              productChuck.push(result.slice(i,i+1));
-            check = true;
-            }
-          }
-        }
-        
-      }
-     
-      console.log(productChuck);
-      if(check == false)
-      {
-        res.render('users/user_search', { title: 'There is no matching search value'
-        , products: productChuck, search_value: search_value, link_price:link_price, link_type:link_type,
-          url_price:url_price, url_type, url_type});
-      }
-      else
-      {
-        res.render('users/user_search', { title: '', products: productChuck, 
-        search_value: search_value, link_price:link_price, link_type:link_type, url_price:url_price, url_type, url_type});
-      }
-        
-
-      db.close();
-    });
-  }); 
-  }
-  else{
-    res.render('index_account', { title: 'Animiz'}); 
-  }*/
-//  res.render('products_z/result_search', {title: 'Search Result'});
+  console.log(req.body.l_username);
  res.render('index_account', { title: 'Animiz'});
 })
 
@@ -228,6 +142,12 @@ router.get("/logout", function (req, res) {
   res.redirect("/"); 
 });*/
 
+
+// Product type
+
+var Ctrl_Product_Type = require('../controllers/product_type')
+
+router.get('/feature', Ctrl_Product_Type.feature);
 
 
 
