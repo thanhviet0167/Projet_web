@@ -6,7 +6,8 @@ const {JSDOM} = jsdom;
 const dom = new JSDOM(`<!DOCTYPE html><p>Password is not correct</p>`)
 
 const account_user = (req, res) => {
-    res.render('index_account', { title: 'User' });
+    console.log(req.session.user);
+    res.render('index_account', { title: 'User', username: req.session.user.username });
 };
 const User = require('../models/user');    
 const bcrypt = require('bcrypt');
@@ -51,13 +52,15 @@ const login = (req, res, next) => {
     .then(user => {
         if(user){
             bcrypt.compare(password, user.password, function(err, result){
-                console.log(result);
+               
                 if(err){
                     throw err
                 }
                 if(result){
-                    let token = jwt.sign({name: username}, 'verySecretValue', {expiresIn: '1h'})
-                    res.redirect('/user')
+                    let token = jwt.sign({name: username}, 'verySecretValue', {expiresIn: '1h'});
+                    req.session.user = user;
+               
+                    res.redirect('/');
                    
                 }
                 else{
@@ -72,4 +75,9 @@ const login = (req, res, next) => {
     })
 }
 
-module.exports = {account_user, register, login};
+const logout = (req, res, next) => {
+    req.session.user = "";
+    res.redirect('/');
+}
+
+module.exports = {account_user, register, login, logout};

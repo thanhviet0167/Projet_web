@@ -41,8 +41,9 @@ router.get('/', function(req, res, next){
         }
 
       }
+      console.log(req.session.user);
       res.render('index', { title: 'Animiz', products: productChuck, top_product: top_product, 
-      features_products:list_features, session: req.session});
+      features_products:list_features, session: req.session, account: req.session.user});
       db.close();
     });
   });
@@ -135,6 +136,7 @@ router.get('/sign-up', function(req, res, next){
 
 router.post('/sign-up', Ctr_User.register);
 
+router.get('/logout', Ctr_User.logout);
 
 /*
 router.get("/logout", function (req, res) { 
@@ -148,8 +150,19 @@ router.get("/logout", function (req, res) {
 var Ctrl_Product_Type = require('../controllers/product_type')
 
 router.get('/feature', Ctrl_Product_Type.feature);
+router.post('/feature', Ctrl_Feedback.get_feedback);
 
+router.get('/male_clothes', Ctrl_Product_Type.male);
+router.post('/male_clothes', Ctrl_Feedback.get_feedback);
 
+router.get('/female_clothes', Ctrl_Product_Type.female);
+router.post('/female_clothes', Ctrl_Feedback.get_feedback);
+
+router.get('/unisex_clothes', Ctrl_Product_Type.unisex);
+router.post('/unisex_clothes', Ctrl_Feedback.get_feedback);
+
+router.get('/accessory', Ctrl_Product_Type.accessory);
+router.post('/accessory', Ctrl_Feedback.get_feedback);
 
 //router.use(express.static('views'));
 

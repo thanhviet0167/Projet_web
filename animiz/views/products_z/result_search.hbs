@@ -44,22 +44,36 @@
                   <h6 class="my-md-2 text-white"><i class="fa fa-shopping-cart"></i> Shopping anytime anywhere</h6>
               </div>
               <div class="col-md-4 col-12 text-right">
-                  <p class="my-md-4 header-links">
-                      <button type="button"  class="btn btn-primary px-2" onclick="login()">
-                        Login
-                      </button>
-                      <button type="button" class="btn btn-primary px-2" onclick="sign_up()">
-                        Sign Up
-                      </button>
-                  </p>
-                  <script>
-                      function login(){
-                          window.location = '/login';
-                      }
-                      function sign_up(){
-                          window.location = '/sign-up';
-                      }
-                  </script>
+                 {{# if account}}
+                    <div class="btn-group">
+                        <a class="btn border my-md-4 my-2 text-white"  data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false" href="#">{{account.username}}</a>
+                        <div class="dropdown-menu">
+                            <a href="/user/profile" class="dropdown-item">My account</a>
+                            <a href="/shopping-cart" class="dropdown-item">My cart</a>
+                            <a href="/logout" class="dropdown-item">Log out</a>
+                            
+                        </div>
+                    </div>
+                  {{else}}   
+                    <p class="my-md-4 header-links">
+                        <button type="button"  class="btn btn-primary px-2" onclick="login()">
+                            Login
+                        </button>
+                        <button type="button" class="btn btn-primary px-2" onclick="sign_up()">
+                            Sign Up
+                        </button>
+                    </p>
+                    <script>
+                        function login(){
+                            window.location = '/login';
+                        }
+                        function sign_up(){
+                            window.location = '/sign-up';
+                        }
+                    </script>
+                    {{/if}}
               </div>
               
           </div>
@@ -75,19 +89,19 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="/feature">Features</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Male Clothes</a>
+                <a class="nav-link" href="/male_clothes">Male Clothes</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#">Female Clothes</a>
+                  <a class="nav-link" href="/female_clothes">Female Clothes</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#">Headware</a>
+                  <a class="nav-link" href="/unisex_clothes">Unisex</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#">Accessory</a>
+                  <a class="nav-link" href="/accessory">Accessory</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="#">About us</a>

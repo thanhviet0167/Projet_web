@@ -124,9 +124,16 @@ var add_to_cart = (req,res, next) => {
 }
 
 var Buy_Product = (req, res, next) => {
-    req.session.cart = {};
-    res.redirect('/');
+    if(req.session.user != undefined)
+    {
+        req.session.cart = {};
+        res.redirect('/');
+    }
+    else{
+        res.redirect('/login');
+    }
 }
+    
 
 var Reduce_One = (req, res, next) => {
     var productId = req.query.id;
@@ -168,13 +175,13 @@ var shopping_cart = (req, res, next) => {
           if(!req.session.cart){
             return  res.render('products_z/shopping_cart', { title: "Shopping Cart", 
             products:null, totalPrice: 0,
-            new_product: new_product, list_product: list_product, session: req.session});
+            new_product: new_product, list_product: list_product, session: req.session, account: req.session.user});
             db.close();
           }
           var cart = new Cart(req.session.cart);
           res.render('products_z/shopping_cart', { title: "Shopping Cart", 
           products:cart.generateArray(), totalPrice: cart.totalPrice,
-          new_product: new_product, list_product: list_product, session: req.session});
+          new_product: new_product, list_product: list_product, session: req.session, account: req.session.user});
           db.close();
         });
       });
@@ -222,7 +229,7 @@ const Details = (req, res, next) => {
         
       }
       res.render('products_z/product_details', { title: 'Product Details', 
-      product:product, new_product: new_product, list_product: list_product, session: req.session, productID: product_id});
+      product:product, new_product: new_product, list_product: list_product, session: req.session, productID: product_id, account: req.session.user});
       db.close();
     });
   });
